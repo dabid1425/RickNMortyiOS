@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol RMCharacterItemSelectedDelegate: AnyObject {
+    func didLoadInitialCharacters()
+    
+}
+
 class CharacterTableViewCell: UITableViewCell {
     static let cellIdentifier = "CharacterTableViewCell"
     var rmCharacter: RMCharacter!
@@ -16,17 +21,48 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet var status: UILabel!
     @IBOutlet var characterName: UILabel!
     @IBOutlet var characterImageView: UIImageView!
+    public weak var delegate: RMCharacterItemSelectedDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        characterName.adjustsFontSizeToFitWidth = true
+        lastEpSeen.adjustsFontSizeToFitWidth = true
+        firstEpSeen.adjustsFontSizeToFitWidth = true
+        status.adjustsFontSizeToFitWidth = true
+        gender.adjustsFontSizeToFitWidth = true
     }
-    public func setData(rmCharacter: RMCharacter){
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        characterName.text = ""
+        lastEpSeen.text = ""
+        firstEpSeen.text = ""
+        status.text = ""
+        gender.text = ""
+        characterImageView.image = nil
+    }
+    public func configure(rmCharacter: RMCharacter){
         self.rmCharacter = rmCharacter
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        characterName.text = rmCharacter.name
+        
+        lastEpSeen.text = rmCharacter.episode[rmCharacter.episode.count - 1]
+        firstEpSeen.text = rmCharacter.episode[0]
+        status.text = rmCharacter.status.text
+        gender.text = rmCharacter.gender.rawValue
+        if let url = URL(string: rmCharacter.image) {
+            RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data)
+                        self?.characterImageView.image = image
+                    }
+                case .failure(let error):
+                    print(String(describing: error))
+                    break
+                }
+                
+            })
+        }
     }
     
 }
