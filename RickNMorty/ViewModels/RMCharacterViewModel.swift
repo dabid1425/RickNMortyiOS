@@ -9,7 +9,7 @@ import Foundation
 
 protocol RMCharacterListViewViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
-    func didLoadMoreCharacters(with newIndexPaths: [IndexPath])
+    func didLoadMoreCharacters()
 }
 
 class RMCharacterViewModel {
@@ -66,16 +66,10 @@ class RMCharacterViewModel {
                 let newCount = moreResults.count
                 let total = originalCount+newCount
                 let startingIndex = total - newCount
-                let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap({
-                    return IndexPath(row: $0, section: 0)
-                })
                 strongSelf.characters.append(contentsOf: moreResults)
 
                 DispatchQueue.main.async {
-                    strongSelf.delegate?.didLoadMoreCharacters(
-                        with: indexPathsToAdd
-                    )
-
+                    strongSelf.delegate?.didLoadMoreCharacters()
                     strongSelf.isLoadingMoreCharacters = false
                 }
             case .failure(let failure):

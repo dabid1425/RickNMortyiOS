@@ -41,6 +41,7 @@
 		33B16CD32A0C14CF00516439 /* RMCharacterVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B16CD22A0C14CF00516439 /* RMCharacterVC.storyboard */; };
 		33B16D552A0D5C9E00516439 /* RMCharacterDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B16D542A0D5C9E00516439 /* RMCharacterDetailVC.storyboard */; };
 		33B16D572A0D5CBE00516439 /* RMCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B16D562A0D5CBE00516439 /* RMCharacterDetailViewController.swift */; };
+		33B16D592A0D773000516439 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B16D582A0D773000516439 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		33B16CD22A0C14CF00516439 /* RMCharacterVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RMCharacterVC.storyboard; sourceTree = "<group>"; };
 		33B16D542A0D5C9E00516439 /* RMCharacterDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RMCharacterDetailVC.storyboard; sourceTree = "<group>"; };
 		33B16D562A0D5CBE00516439 /* RMCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewController.swift; sourceTree = "<group>"; };
+		33B16D582A0D773000516439 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		336F26F82A0BE1BF003EF2C7 = {
 			isa = PBXGroup;
 			children = (
+				33B16D582A0D773000516439 /* Extensions.swift */,
 				336F27032A0BE1BF003EF2C7 /* RickNMorty */,
 				336F271A2A0BE1C0003EF2C7 /* RickNMortyTests */,
 				336F27242A0BE1C0003EF2C7 /* RickNMortyUITests */,
@@ -453,6 +456,7 @@
 				339E098B2A0C006E0049956E /* RMEpisode.swift in Sources */,
 				339E09792A0C003A0049956E /* RMEndpoint.swift in Sources */,
 				339E098A2A0C006E0049956E /* RMLocation.swift in Sources */,
+				33B16D592A0D773000516439 /* Extensions.swift in Sources */,
 				339E098C2A0C006E0049956E /* RMCharacterGender.swift in Sources */,
 				339E09762A0C003A0049956E /* RMAPICacheManager.swift in Sources */,
 				339E09782A0C003A0049956E /* RMRequest.swift in Sources */,

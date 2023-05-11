@@ -36,6 +36,7 @@ class RMCharacterListViewController: UIViewController {
         tabelView.isHidden = !characterViewModel.tableView
         collectionView.isHidden = characterViewModel.tableView
         characterViewModel.tableView ?  tabelView.reloadData() : collectionView.reloadData()
+        view.setNeedsLayout()
     }
     private func registerCells() {
         tabelView.dataSource = self
@@ -57,6 +58,13 @@ class RMCharacterListViewController: UIViewController {
         spinner.alpha = 0
         characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
     }
+    private func displayDetailVC(indexPath: IndexPath) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
+        if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
+            charactersVC.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
+            navigationController?.pushViewController(charactersVC, animated: true)
+        }
+    }
 }
 extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,11 +83,7 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
-        if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
-            navigationController?.pushViewController(charactersVC, animated: true)
-        }
-        
+        displayDetailVC(indexPath: indexPath)
     }
 }
 extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
@@ -87,15 +91,13 @@ extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
         stopSpinner()
     }
     
-    func didLoadMoreCharacters(with newIndexPaths: [IndexPath]) {
+    func didLoadMoreCharacters() {
         stopSpinner()
-        characterViewModel.tableView ? self.tabelView.insertRows(at: newIndexPaths, with: .automatic) :  collectionView.performBatchUpdates {
-            self.collectionView.insertItems(at: newIndexPaths)
-        }
+        characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
     }
 }
 
-extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characterViewModel.getCharacters().count
     }
@@ -110,8 +112,25 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
         return cell
     }
-    
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let bounds = collectionView.bounds
+        let width: CGFloat
+        if UIDevice.isiPhone {
+            width = (bounds.width-30)/2
+        } else {
+            // mac | ipad
+            width = (bounds.width-50)/4
+        }
+
+        return CGSize(
+            width: width,
+            height: width * 1.5
+        )
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        displayDetailVC(indexPath: indexPath)
+    }
 }
 
 extension RMCharacterListViewController: UIScrollViewDelegate {

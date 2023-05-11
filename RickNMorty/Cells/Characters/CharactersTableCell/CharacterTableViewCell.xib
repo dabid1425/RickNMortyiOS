@@ -4,12 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharacterTableViewCell" rowHeight="104" id="KGk-i7-Jjw" customClass="CharacterTableViewCell" customModule="RickNMorty" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CharacterTableViewCell" rowHeight="104" id="KGk-i7-Jjw" customClass="CharacterTableViewCell" customModule="RickNMorty" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="498" height="104"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -19,13 +20,33 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zjb-Ck-5aH">
                         <rect key="frame" x="10" y="10" width="478" height="84"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zH-TA-8di">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLv-kq-AWm">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="84"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zH-TA-8di">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="84"/>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9HA-2V-YcC">
+                                        <rect key="frame" x="0.0" y="2" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="MTT-cx-nAM"/>
+                                            <constraint firstAttribute="height" constant="80" id="bn9-2Q-6SG"/>
+                                        </constraints>
+                                        <color key="color" systemColor="systemGreenColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="8Ig-fL-Qhv"/>
-                                    <constraint firstAttribute="height" constant="80" id="fLX-PT-0dB"/>
+                                    <constraint firstAttribute="height" constant="80" id="48I-Ya-GIr"/>
+                                    <constraint firstItem="9HA-2V-YcC" firstAttribute="centerY" secondItem="HLv-kq-AWm" secondAttribute="centerY" id="CuU-lS-QTn"/>
+                                    <constraint firstAttribute="trailing" secondItem="3zH-TA-8di" secondAttribute="trailing" id="GKP-TH-leZ"/>
+                                    <constraint firstItem="3zH-TA-8di" firstAttribute="leading" secondItem="HLv-kq-AWm" secondAttribute="leading" id="JL1-Ps-94C"/>
+                                    <constraint firstItem="9HA-2V-YcC" firstAttribute="centerX" secondItem="HLv-kq-AWm" secondAttribute="centerX" id="NWm-D9-1CZ"/>
+                                    <constraint firstItem="3zH-TA-8di" firstAttribute="top" secondItem="HLv-kq-AWm" secondAttribute="top" id="XTh-Ji-5Is"/>
+                                    <constraint firstAttribute="width" constant="80" id="ZoS-uz-61k"/>
+                                    <constraint firstAttribute="bottom" secondItem="3zH-TA-8di" secondAttribute="bottom" id="i1K-D2-PZE"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IMX-PZ-8L1">
                                 <rect key="frame" x="90" y="0.0" width="388" height="84"/>
                                 <subviews>
@@ -88,9 +109,18 @@
                 <outlet property="firstEpSeen" destination="uGW-hx-gEY" id="EJE-8O-UYq"/>
                 <outlet property="gender" destination="KKi-9t-Xwa" id="9DF-07-bZM"/>
                 <outlet property="lastEpSeen" destination="zdF-Ah-ss9" id="ysL-Sx-9tA"/>
+                <outlet property="spinner" destination="9HA-2V-YcC" id="R5P-rm-5qF"/>
                 <outlet property="status" destination="gSJ-1E-vc3" id="kOs-VK-epf"/>
             </connections>
             <point key="canvasLocation" x="274.80916030534348" y="40.845070422535215"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
