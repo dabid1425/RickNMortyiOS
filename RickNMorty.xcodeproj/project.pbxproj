@@ -131,7 +131,6 @@
 		336F26F82A0BE1BF003EF2C7 = {
 			isa = PBXGroup;
 			children = (
-				33B16D582A0D773000516439 /* Extensions.swift */,
 				336F27032A0BE1BF003EF2C7 /* RickNMorty */,
 				336F271A2A0BE1C0003EF2C7 /* RickNMortyTests */,
 				336F27242A0BE1C0003EF2C7 /* RickNMortyUITests */,
@@ -152,6 +151,7 @@
 		336F27032A0BE1BF003EF2C7 /* RickNMorty */ = {
 			isa = PBXGroup;
 			children = (
+				33C41A872A0EA24B00B5F267 /* Extentions */,
 				339E09912A0C0C800049956E /* ViewModels */,
 				339E097A2A0C006E0049956E /* Models */,
 				339E09712A0C003A0049956E /* APIClient */,
@@ -299,6 +299,14 @@
 				339E09922A0C0EFF0049956E /* RMCharacterViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		33C41A872A0EA24B00B5F267 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				33B16D582A0D773000516439 /* Extensions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
