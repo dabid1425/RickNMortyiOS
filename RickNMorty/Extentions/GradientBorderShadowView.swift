@@ -9,12 +9,7 @@ import Foundation
 import UIKit
 @IBDesignable
 class GradientBorderShadowView: UIView {
-    
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-        }
-    }
+
     @IBInspectable override var borderColor: UIColor? {
         didSet {
             layer.borderColor = borderColor?.cgColor
@@ -38,6 +33,17 @@ class GradientBorderShadowView: UIView {
     @IBInspectable var shadowRadius: CGFloat = 0 {
         didSet {
             layer.shadowRadius = shadowRadius
+        }
+    }
+    @IBInspectable var isCircle: Bool = false {
+        didSet {
+            layer.cornerRadius = isCircle ? bounds.width / 2.0 : cornerRadius
+        }
+    }
+
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = isCircle ? bounds.width / 2.0 : cornerRadius
         }
     }
     
@@ -87,7 +93,7 @@ class GradientBorderShadowView: UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowOffset = shadowOffset
         
-        layer.cornerRadius = cornerRadius
+        layer.cornerRadius = isCircle ? bounds.width / 2.0 : cornerRadius
         layer.masksToBounds = true
         gradientLayer?.frame = bounds
         updateGradient()

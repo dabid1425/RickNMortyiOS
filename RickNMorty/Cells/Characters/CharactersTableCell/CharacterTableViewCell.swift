@@ -13,6 +13,7 @@ protocol RMCharacterItemSelectedDelegate: AnyObject {
 }
 
 class CharacterTableViewCell: UITableViewCell {
+    @IBOutlet var background: GradientBorderShadowView!
     static let cellIdentifier = "CharacterTableViewCell"
     var rmCharacter: RMCharacter!
     @IBOutlet var spinner: UIActivityIndicatorView!
@@ -39,6 +40,8 @@ class CharacterTableViewCell: UITableViewCell {
         characterImageView.image = nil
         spinner.startAnimating()
         spinner.alpha = 1
+        background.endColor = .clear
+        background.startColor = .clear
     }
     public func configure(rmCharacter: RMCharacter){
         self.rmCharacter = rmCharacter
@@ -50,6 +53,8 @@ class CharacterTableViewCell: UITableViewCell {
         characterImageView.labelText = rmCharacter.status.text
         characterImageView.labelTextColor = rmCharacter.status == .dead ? .red : .green
         characterImageView.borderColor = rmCharacter.status == .dead ? .red : .green
+        background.startColor = rmCharacter.status == .dead ? .purple : .systemTeal
+        background.endColor = rmCharacter.status == .dead ? .red : .green
         gender.text = rmCharacter.gender.rawValue
         if let url = URL(string: rmCharacter.image) {
             RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in

@@ -9,6 +9,7 @@ import UIKit
 import Material
 
 class CharacterCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var background: GradientBorderShadowView!
     static let cellIdentifier = "CharacterCollectionViewCell"
     @IBOutlet var spinner: UIActivityIndicatorView!
     var rmCharacter: RMCharacter!
@@ -26,6 +27,10 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterImageView.image = nil
         spinner.startAnimating()
         spinner.alpha = 1
+        characterImageView.labelText = ""
+        characterImageView.labelTextColor = .clear
+        background.startColor = .clear
+        background.endColor = .clear
     }
     
     public func configure(rmCharacter: RMCharacter){
@@ -35,6 +40,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterImageView.labelText = rmCharacter.status.text
         characterImageView.labelTextColor = rmCharacter.status == .dead ? .red : .green
         characterImageView.borderColor = rmCharacter.status == .dead ? .red : .green
+        background.startColor = rmCharacter.status == .dead ? .purple : .systemTeal
+        background.endColor = rmCharacter.status == .dead ? .red : .green
         if let url = URL(string: rmCharacter.image) {
             RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in
                 switch result {

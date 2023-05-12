@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections>
+                <outlet property="button" destination="zlo-8n-hVA" id="sQc-fJ-dKz"/>
+                <outlet property="gradientView" destination="zle-b0-NvF" id="fHT-Fd-mrE"/>
+                <outlet property="imageButton" destination="8LL-gb-0JO" id="oBy-sj-z17"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageButtonView">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zle-b0-NvF" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-gb-0JO" customClass="CurvedLabelImageView" customModule="RickNMorty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-8n-hVA">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="itemClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="ec1-4j-mrW"/>
+                                <action selector="itemClicked:" destination="-1" eventType="touchUpInside" id="y6b-hs-75v"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="LpG-2Y-S9P"/>
+                        <constraint firstAttribute="trailing" secondItem="zlo-8n-hVA" secondAttribute="trailing" id="Ooa-Og-eQ7"/>
+                        <constraint firstAttribute="bottom" secondItem="zlo-8n-hVA" secondAttribute="bottom" id="PFJ-6f-L1S"/>
+                        <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" id="Trq-4g-A8M"/>
+                        <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="XJD-Kh-aeD"/>
+                        <constraint firstItem="zlo-8n-hVA" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="ckI-6P-aUV"/>
+                        <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" id="g5f-6z-Y96"/>
+                        <constraint firstItem="zlo-8n-hVA" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="zze-kd-ldj"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="circularRadius" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9XE-GD-D57"/>
+                <constraint firstAttribute="bottom" secondItem="zle-b0-NvF" secondAttribute="bottom" id="VGE-Dy-bLm"/>
+                <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n3Y-v6-8rS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zle-b0-NvF" secondAttribute="trailing" id="vzX-Iz-w3g"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="zlo-8n-hVA" id="Jro-tL-Saj"/>
+            </connections>
+            <point key="canvasLocation" x="-51" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

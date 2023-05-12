@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rns-zG-GDi" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
-                        <rect key="frame" x="10" y="10" width="478" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="478" height="100"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zjb-Ck-5aH">
                                 <rect key="frame" x="10" y="10" width="458" height="80"/>
@@ -105,12 +105,6 @@
                             <constraint firstAttribute="bottom" secondItem="Zjb-Ck-5aH" secondAttribute="bottom" constant="10" id="x31-uT-iwX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" systemColor="systemTealColor"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                <color key="value" systemColor="systemGreenColor"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="point" keyPath="gradientStartPoint">
                                 <point key="value" x="0.0" y="0.5"/>
                             </userDefinedRuntimeAttribute>
@@ -120,6 +114,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -134,6 +129,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="background" destination="rns-zG-GDi" id="yco-Yo-UEH"/>
                 <outlet property="characterImageView" destination="3zH-TA-8di" id="q1l-0g-19D"/>
                 <outlet property="characterName" destination="gCc-I2-Ike" id="tDM-J2-V6t"/>
                 <outlet property="firstEpSeen" destination="uGW-hx-gEY" id="EJE-8O-UYq"/>
@@ -150,9 +146,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
