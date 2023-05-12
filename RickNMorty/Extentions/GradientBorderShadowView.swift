@@ -52,13 +52,13 @@ class GradientBorderShadowView: UIView {
             layer.shadowOffset = shadowOffset
         }
     }
-    @IBInspectable var gradientStartPoint: CGPoint = CGPoint(x: 0.5, y: 0) {
+    @IBInspectable var gradientStartPoint: CGPoint = CGPoint(x: 0, y: 0) {
         didSet {
             updateGradient()
         }
     }
 
-    @IBInspectable var gradientEndPoint: CGPoint = CGPoint(x: 0.5, y: 1) {
+    @IBInspectable var gradientEndPoint: CGPoint = CGPoint(x: 0, y: 0) {
         didSet {
             updateGradient()
         }
@@ -81,8 +81,7 @@ class GradientBorderShadowView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        gradientLayer?.frame = bounds
-           updateGradient()
+       
         layer.shadowColor = shadowColor?.cgColor
         layer.shadowRadius = shadowRadius
         layer.shadowOpacity = shadowOpacity
@@ -90,5 +89,7 @@ class GradientBorderShadowView: UIView {
         
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
+        gradientLayer?.frame = bounds
+        updateGradient()
     }
 }

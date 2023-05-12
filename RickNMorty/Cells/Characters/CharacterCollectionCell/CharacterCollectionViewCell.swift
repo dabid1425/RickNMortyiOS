@@ -9,23 +9,20 @@ import UIKit
 import Material
 
 class CharacterCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var mainView: UIView!
     static let cellIdentifier = "CharacterCollectionViewCell"
     @IBOutlet var spinner: UIActivityIndicatorView!
     var rmCharacter: RMCharacter!
-    @IBOutlet var characterStatus: UILabel!
     @IBOutlet var characterName: UILabel!
-    @IBOutlet var characterImageView: UIImageView!
+    @IBOutlet var characterImageView: CurvedLabelImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         characterName.adjustsFontSizeToFitWidth = true
-        characterStatus.adjustsFontSizeToFitWidth = true
+
         
     }
     override func prepareForReuse() {
         super.prepareForReuse()
         characterName.text = ""
-        characterStatus.text = ""
         characterImageView.image = nil
         spinner.startAnimating()
         spinner.alpha = 1
@@ -35,7 +32,9 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         self.rmCharacter = rmCharacter
         characterName.text = rmCharacter.name
         spinner.startAnimating()
-        characterStatus.text = rmCharacter.status.text
+        characterImageView.labelText = rmCharacter.status.text
+        characterImageView.labelTextColor = rmCharacter.status == .dead ? .red : .green
+        characterImageView.borderColor = rmCharacter.status == .dead ? .red : .green
         if let url = URL(string: rmCharacter.image) {
             RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in
                 switch result {

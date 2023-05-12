@@ -27,7 +27,9 @@ class RMCharacterListViewController: UIViewController {
     }
 
     private func addSearchButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
+        let item = UIBarButtonItem(image: UIImage(named: "tablecells.fill"), style: .plain, target: self, action: #selector(didTapSearch))
+
+        navigationItem.rightBarButtonItem = item
     }
 
     @objc private func didTapSearch() {
@@ -36,7 +38,7 @@ class RMCharacterListViewController: UIViewController {
         tabelView.isHidden = !characterViewModel.tableView
         collectionView.isHidden = characterViewModel.tableView
         characterViewModel.tableView ?  tabelView.reloadData() : collectionView.reloadData()
-        view.setNeedsLayout()
+        viewDidLoad()
     }
     private func registerCells() {
         tabelView.dataSource = self
@@ -157,3 +159,4 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
         }
     }
 }
+

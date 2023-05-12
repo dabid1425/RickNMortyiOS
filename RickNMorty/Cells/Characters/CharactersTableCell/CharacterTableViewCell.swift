@@ -19,16 +19,14 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet var lastEpSeen: UILabel!
     @IBOutlet var firstEpSeen: UILabel!
     @IBOutlet var gender: UILabel!
-    @IBOutlet var status: UILabel!
     @IBOutlet var characterName: UILabel!
-    @IBOutlet var characterImageView: UIImageView!
+    @IBOutlet var characterImageView: CurvedLabelImageView!
     public weak var delegate: RMCharacterItemSelectedDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         characterName.adjustsFontSizeToFitWidth = true
         lastEpSeen.adjustsFontSizeToFitWidth = true
         firstEpSeen.adjustsFontSizeToFitWidth = true
-        status.adjustsFontSizeToFitWidth = true
         gender.adjustsFontSizeToFitWidth = true
     }
     override func prepareForReuse() {
@@ -36,7 +34,7 @@ class CharacterTableViewCell: UITableViewCell {
         characterName.text = ""
         lastEpSeen.text = ""
         firstEpSeen.text = ""
-        status.text = ""
+        characterImageView.labelText = ""
         gender.text = ""
         characterImageView.image = nil
         spinner.startAnimating()
@@ -49,7 +47,9 @@ class CharacterTableViewCell: UITableViewCell {
         spinner.startAnimating()
         lastEpSeen.text = rmCharacter.episode[rmCharacter.episode.count - 1]
         firstEpSeen.text = rmCharacter.episode[0]
-        status.text = rmCharacter.status.text
+        characterImageView.labelText = rmCharacter.status.text
+        characterImageView.labelTextColor = rmCharacter.status == .dead ? .red : .green
+        characterImageView.borderColor = rmCharacter.status == .dead ? .red : .green
         gender.text = rmCharacter.gender.rawValue
         if let url = URL(string: rmCharacter.image) {
             RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in
