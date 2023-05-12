@@ -110,6 +110,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
             fatalError("Unsupported cell")
         }
         cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
