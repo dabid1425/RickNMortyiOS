@@ -29,12 +29,9 @@ class RMCharacterViewCellModel {
         return character
     }
     public func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
-        // TODO: Abstract to Image Manager
-        guard let url = URL(string: character.url) else {
-            completion(.failure(URLError(.badURL)))
-            return
+        if let url = URL(string: character.image) {
+            RMImageLoader.shared.downloadImage(url, completion: completion)
         }
-        RMImageLoader.shared.downloadImage(url, completion: completion)
     }
 
 }
