@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class RMCharacterListViewController: UIViewController {
-   
+    
     
     @IBOutlet var imageButton1: ImageButtonView!
     @IBOutlet var imageButton2: ImageButtonView!
@@ -16,7 +16,7 @@ class RMCharacterListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tabelView: UITableView!
-    
+    var changeViewStyle = ImageButtonModel(image: "tablecells.fill", isRounded: true, isSystemNamed: true, buttonType: .changeView)
     private var characterViewModel = RMCharacterViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class RMCharacterListViewController: UIViewController {
     }
     
     private func setImageButtons(){
-//        imageButton1.configure(viewModel: <#ImageButtonModel#>)
-//        imageButton2.configure()
+        imageButton1.configure(viewModel: changeViewStyle)
+        //        imageButton2.configure()
     }
     private func registerCells() {
         tabelView.dataSource = self
@@ -58,7 +58,7 @@ class RMCharacterListViewController: UIViewController {
     private func displayDetailVC(indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
         if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
-           
+            
             navigationController?.pushViewController(charactersVC, animated: true)
         }
     }
@@ -111,7 +111,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let bounds = collectionView.bounds
         let width: CGFloat
         if UIDevice.isiPhone {
@@ -120,7 +120,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
             // mac | ipad
             width = (bounds.width-50)/4
         }
-
+        
         return CGSize(
             width: width,
             height: width * 1.5
@@ -144,7 +144,7 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
             let offset = scrollView.contentOffset.y
             let totalContentHeight = scrollView.contentSize.height
             let totalScrollViewFixedHeight = scrollView.frame.size.height
-
+            
             if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
                 self?.spinner.alpha = 1
                 self?.spinner.startAnimating()
@@ -156,8 +156,15 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
 }
 
 extension RMCharacterListViewController: ImageButtonViewClicked{
-    func buttonClicked() {
-        print("Button Clicked")
+    func buttonClicked(viewModel: ImageButtonModel) {
+        if viewModel.buttonTypeEnum == .changeView {
+            characterViewModel.tableView = !characterViewModel.tableView
+            viewModel.setImageView(image: characterViewModel.tableView ? "tablecells.fill" : "tablecells")
+            imageButton1.configure(viewModel: viewModel)
+            tabelView.isHidden = !characterViewModel.tableView
+            collectionView.isHidden = characterViewModel.tableView
+            characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+        }
     }
     
     

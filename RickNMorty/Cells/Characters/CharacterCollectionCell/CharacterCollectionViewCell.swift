@@ -32,6 +32,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterImageView.labelTextColor = .clear
         background.startColor = .clear
         background.endColor = .clear
+        background.gradientEndPoint = CGPoint(x: 0, y: 0)
+        background.gradientStartPoint = CGPoint(x: 0, y: 0)
     }
     
     public func configure(rmCharacter: RMCharacterViewCellModel){
@@ -43,6 +45,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterImageView.borderColor = rmCharacter.borderColor
         background.startColor = rmCharacter.gradientStartColor
         background.endColor = rmCharacter.gradientEndColor
+        background.gradientEndPoint = CGPoint(x: 0, y: 0.5)
+        background.gradientStartPoint = CGPoint(x: 0.5, y: 0)
         rmCharacter.fetchImage { [weak self] result in
             switch result {
             case .success(let data):

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 protocol ImageButtonViewClicked : AnyObject{
-    func buttonClicked()
+    func buttonClicked(viewModel: ImageButtonModel)
 }
 class ImageButtonView : UIView{
     @IBOutlet var button: UIButton!
@@ -35,10 +35,12 @@ class ImageButtonView : UIView{
            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        }
     public func configure(viewModel: ImageButtonModel){
-        imageButton.image = UIImage(systemName: "eraser")
+        self.viewModel = viewModel
+        imageButton.image = viewModel.isSystemNamedBool ? UIImage(systemName: viewModel.imageString) : UIImage(named: viewModel.imageString)
+        gradientView.isCircle = viewModel.isRoundedBool
     }
     
     @IBAction func itemClicked(_ sender: UIButton) {
-        delegate?.buttonClicked()
+        delegate?.buttonClicked(viewModel: viewModel)
     }
 }
