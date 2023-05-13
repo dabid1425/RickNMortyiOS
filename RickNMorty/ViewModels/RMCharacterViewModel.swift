@@ -3,7 +3,14 @@
 //  RickNMorty
 //
 //  Created by Dan Abid on 5/10/23.
+// References
 //
+//  CharacterListViewViewModel.swift
+//  RickAndMorty
+//
+//  Created by Afraz Siddiqui on 12/23/22.
+//
+
 
 import Foundation
 
@@ -13,14 +20,27 @@ protocol RMCharacterListViewViewModelDelegate: AnyObject {
 }
 
 class RMCharacterViewModel {
-    private var characters: [RMCharacter] = []
+   
     public var apiInfo: RMGetAllCharactersResponse.Info? = nil
     public weak var delegate: RMCharacterListViewViewModelDelegate?
     var tableView = true
     public var isLoadingMoreCharacters = false
 
-    public func getCharacters() -> [RMCharacter]{
-        return characters
+    private var characters: [RMCharacter] = [] {
+        didSet {
+            for character in characters {
+                let cellViewModel = RMCharacterViewCellModel(character: character)
+                if !cellViewModelList.contains(where: { $0.name == cellViewModel.name }) {
+                    cellViewModelList.append(cellViewModel)
+                }
+            }
+        }
+    }
+
+    private var cellViewModelList: [RMCharacterViewCellModel] = []
+    //need to change to a TableCellViewModel and a CollectionCellViewModel list that fetches the image inside the VM
+    public func getCharacters() -> [RMCharacterViewCellModel]{
+        return cellViewModelList
     }
     
     public func fetchCharacters() {

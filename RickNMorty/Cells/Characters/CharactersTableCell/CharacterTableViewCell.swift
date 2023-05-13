@@ -15,7 +15,7 @@ protocol RMCharacterItemSelectedDelegate: AnyObject {
 class CharacterTableViewCell: UITableViewCell {
     @IBOutlet var background: GradientBorderShadowView!
     static let cellIdentifier = "CharacterTableViewCell"
-    var rmCharacter: RMCharacter!
+    var rmCharacter: RMCharacterViewCellModel!
     @IBOutlet var spinner: UIActivityIndicatorView!
     @IBOutlet var lastEpSeen: UILabel!
     @IBOutlet var firstEpSeen: UILabel!
@@ -43,36 +43,34 @@ class CharacterTableViewCell: UITableViewCell {
         background.endColor = .clear
         background.startColor = .clear
     }
-    public func configure(rmCharacter: RMCharacter){
+    public func configure(rmCharacter: RMCharacterViewCellModel){
         self.rmCharacter = rmCharacter
         
         characterName.text = rmCharacter.name
         spinner.startAnimating()
-        lastEpSeen.text = rmCharacter.episode[rmCharacter.episode.count - 1]
-        firstEpSeen.text = rmCharacter.episode[0]
-        characterImageView.labelText = rmCharacter.status.text
-        characterImageView.labelTextColor = rmCharacter.status == .dead ? .red : .green
-        characterImageView.borderColor = rmCharacter.status == .dead ? .red : .green
-        background.startColor = rmCharacter.status == .dead ? .purple : .systemTeal
-        background.endColor = rmCharacter.status == .dead ? .red : .green
-        gender.text = rmCharacter.gender.rawValue
-        if let url = URL(string: rmCharacter.image) {
-            RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in
-                switch result {
-                case .success(let data):
-                    DispatchQueue.main.async {
-                        self?.spinner.stopAnimating()
-                        self?.spinner.alpha = 0
-                        let image = UIImage(data: data)
-                        self?.characterImageView.image = image
-                    }
-                case .failure(let error):
-                    print(String(describing: error))
-                    break
+        lastEpSeen.text = rmCharacter.getCharacter().episode[rmCharacter.getCharacter().episode.count - 1]
+        firstEpSeen.text = rmCharacter.getCharacter().episode[0]
+        characterImageView.labelText = rmCharacter.getCharacter().status.text
+        characterImageView.labelTextColor = rmCharacter.characterStatus == .dead ? .red : .green
+        characterImageView.borderColor = rmCharacter.characterStatus == .dead ? .red : .green
+        background.startColor = rmCharacter.characterStatus == .dead ? .purple : .systemTeal
+        background.endColor = rmCharacter.characterStatus == .dead ? .red : .green
+        gender.text = rmCharacter.gender
+        rmCharacter.fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self?.spinner.stopAnimating()
+                    self?.spinner.alpha = 0
+                    let image = UIImage(data: data)
+                    self?.characterImageView.image = image
                 }
-                
-            })
+            case .failure(let error):
+                print(String(describing: error))
+                break
+            }
         }
+    
     }
     
 }

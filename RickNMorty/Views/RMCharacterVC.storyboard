@@ -49,11 +49,39 @@
                                 </constraints>
                                 <color key="color" systemColor="systemGreenColor"/>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-Fx-kFQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-Fx-kFQ" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cBn-hd-K9U">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-Ia-OAA" customClass="SearchView" customModule="RickNMorty" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3xn-mA-Zfx">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a65-52-mdv" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Vo-XX6" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                        <rect key="frame" x="80" y="0.0" width="80" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="cBn-hd-K9U" firstAttribute="top" secondItem="nLT-Fx-kFQ" secondAttribute="top" id="686-A7-WFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="cBn-hd-K9U" secondAttribute="trailing" id="NKP-c0-g8S"/>
                                     <constraint firstAttribute="height" constant="50" id="Nw2-Qc-hNR"/>
+                                    <constraint firstItem="cBn-hd-K9U" firstAttribute="leading" secondItem="nLT-Fx-kFQ" secondAttribute="leading" id="VLr-7j-xRf"/>
+                                    <constraint firstAttribute="bottom" secondItem="cBn-hd-K9U" secondAttribute="bottom" id="tYL-Jp-Y7S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -77,6 +105,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Svs-5p-LPr" id="cj1-db-4Ox"/>
+                        <outlet property="imageButton1" destination="a65-52-mdv" id="5K3-cS-r8B"/>
+                        <outlet property="imageButton2" destination="MXV-Vo-XX6" id="yJb-oa-esq"/>
+                        <outlet property="searchView" destination="0qk-Ia-OAA" id="e76-EB-2rI"/>
                         <outlet property="spinner" destination="FDM-xj-D9z" id="EIS-t0-VQT"/>
                         <outlet property="tabelView" destination="MT8-xj-2SL" id="YvY-K3-CQj"/>
                     </connections>

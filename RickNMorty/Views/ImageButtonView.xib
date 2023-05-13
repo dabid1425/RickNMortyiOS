@@ -8,15 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="zlo-8n-hVA" id="sQc-fJ-dKz"/>
-                <outlet property="gradientView" destination="zle-b0-NvF" id="fHT-Fd-mrE"/>
-                <outlet property="imageButton" destination="8LL-gb-0JO" id="oBy-sj-z17"/>
+                <outlet property="button" destination="zlo-8n-hVA" id="bd8-M3-v8l"/>
+                <outlet property="gradientView" destination="zle-b0-NvF" id="44j-IL-VKK"/>
+                <outlet property="imageButton" destination="8LL-gb-0JO" id="D1q-YS-wbT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageButtonView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -31,8 +31,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
                             <connections>
-                                <action selector="itemClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="ec1-4j-mrW"/>
-                                <action selector="itemClicked:" destination="-1" eventType="touchUpInside" id="y6b-hs-75v"/>
+                                <action selector="itemClicked:" destination="-1" eventType="touchUpInside" id="k20-sh-KdN"/>
                             </connections>
                         </button>
                     </subviews>
@@ -62,11 +61,6 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zle-b0-NvF" secondAttribute="trailing" id="vzX-Iz-w3g"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="button" destination="zlo-8n-hVA" id="Jro-tL-Saj"/>
-                <outlet property="gradientView" destination="zle-b0-NvF" id="hJa-Up-WHe"/>
-                <outlet property="imageButton" destination="8LL-gb-0JO" id="VXP-df-lJF"/>
-            </connections>
             <point key="canvasLocation" x="-51" y="20"/>
         </view>
     </objects>

@@ -10,6 +10,9 @@ import UIKit
 class RMCharacterListViewController: UIViewController {
    
     
+    @IBOutlet var imageButton1: ImageButtonView!
+    @IBOutlet var imageButton2: ImageButtonView!
+    @IBOutlet var searchView: SearchView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tabelView: UITableView!
@@ -23,18 +26,14 @@ class RMCharacterListViewController: UIViewController {
         characterViewModel.fetchCharacters()
         spinner.startAnimating()
         characterViewModel.delegate = self
-        addSearchButton()
-    }
-
-    private func addSearchButton() {
-        let item = UIBarButtonItem(image: UIImage(named: "tablecells.fill"), style: .plain, target: self, action: #selector(didTapSearch))
-
-        navigationItem.rightBarButtonItem = item
+        imageButton1.delegate = self
+        imageButton2.delegate = self
+        
     }
 
     @objc private func didTapSearch() {
         characterViewModel.tableView = !characterViewModel.tableView
-        navigationItem.rightBarButtonItem?.image =  characterViewModel.tableView ? UIImage(named: "tablecells.fill") : UIImage(named: "tablecells")
+       
         tabelView.isHidden = !characterViewModel.tableView
         collectionView.isHidden = characterViewModel.tableView
         characterViewModel.tableView ?  tabelView.reloadData() : collectionView.reloadData()
@@ -63,7 +62,7 @@ class RMCharacterListViewController: UIViewController {
     private func displayDetailVC(indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
         if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
-            charactersVC.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
+            charactersVC.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row].getCharacter())
             navigationController?.pushViewController(charactersVC, animated: true)
         }
     }
@@ -111,7 +110,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         ) as? CharacterCollectionViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
+        cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row].getCharacter())
         
         return cell
     }
@@ -160,3 +159,6 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
     }
 }
 
+extension RMCharacterListViewController: ImageButtonViewClicked{
+    
+}

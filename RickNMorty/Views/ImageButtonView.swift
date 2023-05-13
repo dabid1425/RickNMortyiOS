@@ -17,14 +17,23 @@ class ImageButtonView : UIView{
     weak var delegate: ImageButtonViewClicked!
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
+           super.init(frame: frame)
+           setupView()
+       }
+       
+       required init?(coder aDecoder: NSCoder) {
+           super.init(coder: aDecoder)
+           setupView()
+       }
+       
+       private func setupView() {
+           let bundle = Bundle(for: type(of: self))
+           let nib = UINib(nibName: "ImageButtonView", bundle: bundle)
+           let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+           addSubview(view)
+           view.frame = bounds
+           view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+       }
     
     
     @IBAction func itemClicked(_ sender: UIButton) {
