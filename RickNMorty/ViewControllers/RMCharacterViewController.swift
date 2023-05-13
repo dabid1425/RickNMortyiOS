@@ -32,8 +32,8 @@ class RMCharacterListViewController: UIViewController {
     }
     
     private func setImageButtons(){
-        imageButton1.configure()
-        imageButton2.configure()
+//        imageButton1.configure(viewModel: <#ImageButtonModel#>)
+//        imageButton2.configure()
     }
     private func registerCells() {
         tabelView.dataSource = self
