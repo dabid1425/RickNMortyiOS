@@ -64,6 +64,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="button" destination="zlo-8n-hVA" id="Jro-tL-Saj"/>
+                <outlet property="gradientView" destination="zle-b0-NvF" id="hJa-Up-WHe"/>
+                <outlet property="imageButton" destination="8LL-gb-0JO" id="VXP-df-lJF"/>
             </connections>
             <point key="canvasLocation" x="-51" y="20"/>
         </view>
