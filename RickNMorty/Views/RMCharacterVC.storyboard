@@ -16,39 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MT8-xj-2SL">
-                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </tableView>
-                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-5p-LPr">
-                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sin-dU-btA">
-                                    <size key="itemSize" width="0.0" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="FDM-xj-D9z">
-                                <rect key="frame" x="110" y="234" width="100" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="4vq-yN-AYa"/>
-                                    <constraint firstAttribute="width" constant="100" id="EHo-YC-OP8"/>
-                                </constraints>
-                                <color key="color" systemColor="systemGreenColor"/>
-                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-Fx-kFQ" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <subviews>
@@ -84,23 +51,47 @@
                                     <constraint firstAttribute="bottom" secondItem="cBn-hd-K9U" secondAttribute="bottom" id="tYL-Jp-Y7S"/>
                                 </constraints>
                             </view>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-5p-LPr">
+                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sin-dU-btA">
+                                    <size key="itemSize" width="0.0" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Xy-Ng-0ZJ">
+                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="FDM-xj-D9z">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4vq-yN-AYa"/>
+                                    <constraint firstAttribute="width" constant="100" id="EHo-YC-OP8"/>
+                                </constraints>
+                                <color key="color" systemColor="systemGreenColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Svs-5p-LPr" firstAttribute="top" secondItem="nLT-Fx-kFQ" secondAttribute="bottom" id="1jl-dw-2iR"/>
-                            <constraint firstItem="MT8-xj-2SL" firstAttribute="top" secondItem="nLT-Fx-kFQ" secondAttribute="bottom" id="6Ds-fS-f2T"/>
                             <constraint firstItem="nLT-Fx-kFQ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Hcf-fi-yfb"/>
                             <constraint firstItem="Svs-5p-LPr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KJv-x1-FA1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Svs-5p-LPr" secondAttribute="trailing" id="OhV-W5-YiZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Svs-5p-LPr" secondAttribute="bottom" id="QAw-o4-ZYd"/>
                             <constraint firstItem="nLT-Fx-kFQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TZ7-ov-dfu"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MT8-xj-2SL" secondAttribute="trailing" id="XYM-rz-lfx"/>
-                            <constraint firstItem="MT8-xj-2SL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YU7-g8-JIt"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MT8-xj-2SL" secondAttribute="bottom" id="agb-cG-s4J"/>
+                            <constraint firstItem="1Xy-Ng-0ZJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bzA-we-S7L"/>
                             <constraint firstItem="nLT-Fx-kFQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gIq-m1-sJf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1Xy-Ng-0ZJ" secondAttribute="bottom" id="lNG-Ld-r3V"/>
                             <constraint firstItem="FDM-xj-D9z" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mhv-X5-fBZ"/>
                             <constraint firstItem="FDM-xj-D9z" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="rtZ-3L-z6j"/>
+                            <constraint firstItem="1Xy-Ng-0ZJ" firstAttribute="top" secondItem="nLT-Fx-kFQ" secondAttribute="bottom" id="vIH-Pz-Blr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Xy-Ng-0ZJ" secondAttribute="trailing" id="x26-Yj-fAa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -109,7 +100,7 @@
                         <outlet property="imageButton2" destination="MXV-Vo-XX6" id="yJb-oa-esq"/>
                         <outlet property="searchView" destination="0qk-Ia-OAA" id="e76-EB-2rI"/>
                         <outlet property="spinner" destination="FDM-xj-D9z" id="EIS-t0-VQT"/>
-                        <outlet property="tabelView" destination="MT8-xj-2SL" id="YvY-K3-CQj"/>
+                        <outlet property="tabelView" destination="1Xy-Ng-0ZJ" id="dHN-lM-Gp5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

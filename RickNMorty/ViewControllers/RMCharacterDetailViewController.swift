@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 class RMCharacterDetailViewController : UIViewController {
+    @IBOutlet var stackView: UIStackView!
     @IBOutlet var characterImageView: CurvedLabelImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
     //var rmCharacterDetailViewModel: RMCharacterDetailModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        for view in self.stackView.arrangedSubviews{
+              self.stackView.removeArrangedSubview(view)
+              view.removeFromSuperview()
+        }
     }
 //    func configure(rmCharacterDetailViewModel: RMCharacterDetailModel){
 //

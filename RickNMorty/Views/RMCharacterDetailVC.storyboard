@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fkc-rR-Dc7" customClass="CurvedLabelImageView" customModule="RickNMorty" customModuleProvider="target">
-                                                <rect key="frame" x="60" y="150" width="200" height="200"/>
+                                                <rect key="frame" x="60" y="10" width="200" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Ahs-Hz-HKa"/>
                                                     <constraint firstAttribute="height" constant="200" id="UOR-BQ-gU9"/>
@@ -34,21 +34,26 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rTj-iK-dfN">
-                                                <rect key="frame" x="40" y="374" width="240" height="126"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="280" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rTj-iK-dfN">
+                                                <rect key="frame" x="20" y="220" width="280" height="280"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ha2-cJ-jSx"/>
+                                                </constraints>
                                             </stackView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Yll-lp-pMA">
-                                                <rect key="frame" x="150" y="240" width="20" height="20"/>
+                                                <rect key="frame" x="150" y="100" width="20" height="20"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Yll-lp-pMA" firstAttribute="centerY" secondItem="Fkc-rR-Dc7" secondAttribute="centerY" id="4zZ-w7-eiz"/>
+                                            <constraint firstItem="rTj-iK-dfN" firstAttribute="leading" secondItem="gsq-F0-Hqy" secondAttribute="leading" constant="20" id="LO1-Zh-nPE"/>
                                             <constraint firstItem="Yll-lp-pMA" firstAttribute="centerX" secondItem="Fkc-rR-Dc7" secondAttribute="centerX" id="Xus-uF-2Ec"/>
-                                            <constraint firstAttribute="height" constant="500" id="cNt-Ae-Qiv"/>
-                                            <constraint firstItem="Fkc-rR-Dc7" firstAttribute="centerY" secondItem="gsq-F0-Hqy" secondAttribute="centerY" id="cty-ei-mr8"/>
+                                            <constraint firstItem="rTj-iK-dfN" firstAttribute="top" secondItem="Fkc-rR-Dc7" secondAttribute="bottom" constant="10" id="ZyW-Y0-DjU"/>
+                                            <constraint firstAttribute="trailing" secondItem="rTj-iK-dfN" secondAttribute="trailing" constant="20" id="tEl-V6-Vlo"/>
                                             <constraint firstItem="Fkc-rR-Dc7" firstAttribute="centerX" secondItem="gsq-F0-Hqy" secondAttribute="centerX" id="teb-zV-8OT"/>
+                                            <constraint firstAttribute="bottom" secondItem="rTj-iK-dfN" secondAttribute="bottom" id="vJf-fb-lvy"/>
+                                            <constraint firstItem="Fkc-rR-Dc7" firstAttribute="top" secondItem="gsq-F0-Hqy" secondAttribute="top" constant="10" id="vhU-Bk-Ux5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -75,6 +80,7 @@
                     <connections>
                         <outlet property="characterImageView" destination="Fkc-rR-Dc7" id="tNN-PX-BuF"/>
                         <outlet property="spinner" destination="Yll-lp-pMA" id="qpt-U9-4nq"/>
+                        <outlet property="stackView" destination="rTj-iK-dfN" id="d7D-kA-lc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
