@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchView" customModule="RickNMorty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maI-JC-kgi">
+                    <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-8h-brc">
+                            <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by product name..." translatesAutoresizingMaskIntoConstraints="NO" id="SJF-bZ-8mK">
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
+                                    <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="SJF-bZ-8mK" firstAttribute="leading" secondItem="gC9-8h-brc" secondAttribute="leading" id="0gk-He-UhL"/>
+                                <constraint firstAttribute="bottom" secondItem="SJF-bZ-8mK" secondAttribute="bottom" id="Gch-dh-ROI"/>
+                                <constraint firstAttribute="trailing" secondItem="SJF-bZ-8mK" secondAttribute="trailing" id="gyE-1G-Jp2"/>
+                                <constraint firstItem="SJF-bZ-8mK" firstAttribute="top" secondItem="gC9-8h-brc" secondAttribute="top" id="pD7-aW-edg"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="gC9-8h-brc" secondAttribute="trailing" id="7W4-LO-8Er"/>
+                        <constraint firstAttribute="bottom" secondItem="gC9-8h-brc" secondAttribute="bottom" id="Kjy-AG-YCD"/>
+                        <constraint firstItem="gC9-8h-brc" firstAttribute="leading" secondItem="maI-JC-kgi" secondAttribute="leading" id="TXd-8d-Jbp"/>
+                        <constraint firstAttribute="height" constant="50" id="hZx-ri-f1q"/>
+                        <constraint firstItem="gC9-8h-brc" firstAttribute="top" secondItem="maI-JC-kgi" secondAttribute="top" id="rFb-pj-1w3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="maI-JC-kgi" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="0L7-BC-leu"/>
+                <constraint firstItem="maI-JC-kgi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Vl-82-MFP"/>
+                <constraint firstItem="maI-JC-kgi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JMw-8T-LJR"/>
+                <constraint firstItem="maI-JC-kgi" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="e3t-Ul-eSA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="searchBar" destination="SJF-bZ-8mK" id="bhd-VA-Psp"/>
+            </connections>
+            <point key="canvasLocation" x="-171.12676056338029" y="-15.267175572519083"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
