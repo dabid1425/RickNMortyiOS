@@ -88,7 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nLT-Fx-kFQ" firstAttribute="bottom" secondItem="Svs-5p-LPr" secondAttribute="top" id="1jl-dw-2iR"/>
+                            <constraint firstItem="Svs-5p-LPr" firstAttribute="top" secondItem="nLT-Fx-kFQ" secondAttribute="bottom" id="1jl-dw-2iR"/>
                             <constraint firstItem="MT8-xj-2SL" firstAttribute="top" secondItem="nLT-Fx-kFQ" secondAttribute="bottom" id="6Ds-fS-f2T"/>
                             <constraint firstItem="nLT-Fx-kFQ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Hcf-fi-yfb"/>
                             <constraint firstItem="Svs-5p-LPr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KJv-x1-FA1"/>

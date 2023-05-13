@@ -28,16 +28,12 @@ class RMCharacterListViewController: UIViewController {
         characterViewModel.delegate = self
         imageButton1.delegate = self
         imageButton2.delegate = self
-        imageButton1.imageButton.image = characterViewModel.tableView ? UIImage(named: "tablecells.fill") : UIImage(named: "tablecells")
+        setImageButtons()
     }
-
-    @objc private func didTapSearch() {
-        characterViewModel.tableView = !characterViewModel.tableView
-       
-        tabelView.isHidden = !characterViewModel.tableView
-        collectionView.isHidden = characterViewModel.tableView
-        characterViewModel.tableView ?  tabelView.reloadData() : collectionView.reloadData()
-        viewDidLoad()
+    
+    private func setImageButtons(){
+        imageButton1.configure()
+        imageButton2.configure()
     }
     private func registerCells() {
         tabelView.dataSource = self
@@ -62,7 +58,7 @@ class RMCharacterListViewController: UIViewController {
     private func displayDetailVC(indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
         if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
-            charactersVC.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row].getCharacter())
+           
             navigationController?.pushViewController(charactersVC, animated: true)
         }
     }
@@ -110,7 +106,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         ) as? CharacterCollectionViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row].getCharacter())
+        cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
         
         return cell
     }
@@ -160,5 +156,9 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
 }
 
 extension RMCharacterListViewController: ImageButtonViewClicked{
+    func buttonClicked() {
+        print("Button Clicked")
+    }
+    
     
 }

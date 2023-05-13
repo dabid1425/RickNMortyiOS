@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,16 +34,16 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="LpG-2Y-S9P"/>
-                        <constraint firstAttribute="trailing" secondItem="zlo-8n-hVA" secondAttribute="trailing" id="Ooa-Og-eQ7"/>
-                        <constraint firstAttribute="bottom" secondItem="zlo-8n-hVA" secondAttribute="bottom" id="PFJ-6f-L1S"/>
-                        <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" id="Trq-4g-A8M"/>
-                        <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="XJD-Kh-aeD"/>
-                        <constraint firstItem="zlo-8n-hVA" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="ckI-6P-aUV"/>
-                        <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" id="g5f-6z-Y96"/>
-                        <constraint firstItem="zlo-8n-hVA" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="zze-kd-ldj"/>
+                        <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" id="5rC-NV-40y"/>
+                        <constraint firstItem="zlo-8n-hVA" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="KXZ-RN-Jbr"/>
+                        <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="OAr-c3-VOg"/>
+                        <constraint firstItem="zlo-8n-hVA" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="SlW-tF-nVe"/>
+                        <constraint firstAttribute="trailing" secondItem="zlo-8n-hVA" secondAttribute="trailing" id="b41-9T-lmh"/>
+                        <constraint firstAttribute="bottom" secondItem="zlo-8n-hVA" secondAttribute="bottom" id="c3U-Tt-t3g"/>
+                        <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="d1X-je-F3e"/>
+                        <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" id="gnC-at-8Xw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="circularRadius" value="YES"/>
@@ -55,18 +54,13 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9XE-GD-D57"/>
-                <constraint firstAttribute="bottom" secondItem="zle-b0-NvF" secondAttribute="bottom" id="VGE-Dy-bLm"/>
-                <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n3Y-v6-8rS"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zle-b0-NvF" secondAttribute="trailing" id="vzX-Iz-w3g"/>
+                <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="MF6-Qb-f82"/>
+                <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Tu4-Xb-Zu1"/>
+                <constraint firstItem="zle-b0-NvF" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="10" id="bX3-eq-8Of"/>
+                <constraint firstItem="zle-b0-NvF" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="10" id="sZI-2a-9Kh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-51" y="20"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 protocol ImageButtonViewClicked : AnyObject{
-    
+    func buttonClicked()
 }
 class ImageButtonView : UIView{
     @IBOutlet var button: UIButton!
     @IBOutlet var imageButton: CurvedLabelImageView!
     @IBOutlet var gradientView: GradientBorderShadowView!
     weak var delegate: ImageButtonViewClicked!
-    
+    var viewModel: ImageButtonModel!
     override init(frame: CGRect) {
            super.init(frame: frame)
            setupView()
@@ -34,9 +34,11 @@ class ImageButtonView : UIView{
            view.frame = bounds
            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        }
-    
+    public func configure(viewModel: ImageButtonModel){
+        imageButton.image = UIImage(systemName: "eraser")
+    }
     
     @IBAction func itemClicked(_ sender: UIButton) {
-        
+        delegate?.buttonClicked()
     }
 }

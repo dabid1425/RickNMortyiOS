@@ -12,13 +12,14 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     @IBOutlet var background: GradientBorderShadowView!
     static let cellIdentifier = "CharacterCollectionViewCell"
     @IBOutlet var spinner: UIActivityIndicatorView!
-    var rmCharacter: RMCharacter!
+    var rmCharacter: RMCharacterViewCellModel!
     @IBOutlet var characterName: UILabel!
     @IBOutlet var characterImageView: CurvedLabelImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         characterName.adjustsFontSizeToFitWidth = true
-
+        background.startColor = .clear
+        background.endColor = .clear
         
     }
     override func prepareForReuse() {
@@ -33,31 +34,28 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         background.endColor = .clear
     }
     
-    public func configure(rmCharacter: RMCharacter){
+    public func configure(rmCharacter: RMCharacterViewCellModel){
         self.rmCharacter = rmCharacter
         characterName.text = rmCharacter.name
         spinner.startAnimating()
-        characterImageView.labelText = rmCharacter.status.text
-        characterImageView.labelTextColor = rmCharacter.status == .dead ? .red : .green
-        characterImageView.borderColor = rmCharacter.status == .dead ? .red : .green
-        background.startColor = rmCharacter.status == .dead ? .purple : .systemTeal
-        background.endColor = rmCharacter.status == .dead ? .red : .green
-        if let url = URL(string: rmCharacter.image) {
-            RMImageLoader.shared.downloadImage(url, completion: { [weak self] result in
-                switch result {
-                case .success(let data):
-                    DispatchQueue.main.async {
-                        self?.spinner.stopAnimating()
-                        self?.spinner.alpha = 0
-                        let image = UIImage(data: data)
-                        self?.characterImageView.image = image
-                    }
-                case .failure(let error):
-                    print(String(describing: error))
-                    break
+        characterImageView.labelText = rmCharacter.characterStatusText
+        characterImageView.labelTextColor = rmCharacter.labelTextColor
+        characterImageView.borderColor = rmCharacter.borderColor
+        background.startColor = rmCharacter.gradientStartColor
+        background.endColor = rmCharacter.gradientEndColor
+        rmCharacter.fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self?.spinner.stopAnimating()
+                    self?.spinner.alpha = 0
+                    let image = UIImage(data: data)
+                    self?.characterImageView.image = image
                 }
-                
-            })
+            case .failure(let error):
+                print(String(describing: error))
+                break
+            }
         }
     }
 }
