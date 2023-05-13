@@ -32,10 +32,10 @@ class CharacterTableViewCell: UITableViewCell {
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-        characterName.text = ""
-        lastEpSeen.text = ""
-        firstEpSeen.text = ""
-        characterImageView.labelText = ""
+        characterName.text = nil
+        lastEpSeen.text = nil
+        firstEpSeen.text = nil
+        characterImageView.labelText = nil
         gender.text = ""
         characterImageView.image = nil
         spinner.startAnimating()
@@ -45,7 +45,6 @@ class CharacterTableViewCell: UITableViewCell {
     }
     public func configure(rmCharacter: RMCharacterViewCellModel){
         self.rmCharacter = rmCharacter
-        
         characterName.text = rmCharacter.name
         spinner.startAnimating()
         lastEpSeen.text = rmCharacter.getCharacter().episode[rmCharacter.getCharacter().episode.count - 1]
@@ -53,9 +52,10 @@ class CharacterTableViewCell: UITableViewCell {
         characterImageView.labelText = rmCharacter.getCharacter().status.text
         characterImageView.labelTextColor = rmCharacter.characterStatus == .dead ? .red : .green
         characterImageView.borderColor = rmCharacter.characterStatus == .dead ? .red : .green
-        background.startColor = rmCharacter.characterStatus == .dead ? .purple : .systemTeal
-        background.endColor = rmCharacter.characterStatus == .dead ? .red : .green
+        background.startColor = rmCharacter.characterStatus == .dead ? .systemPurple : .systemTeal
+        background.endColor = rmCharacter.characterStatus == .dead ? .systemRed : .systemGreen
         gender.text = rmCharacter.gender
+        print("\(rmCharacter.name) , \(rmCharacter.characterStatus) : \(background.startColor) ,\(background.endColor)")
         rmCharacter.fetchImage { [weak self] result in
             switch result {
             case .success(let data):
