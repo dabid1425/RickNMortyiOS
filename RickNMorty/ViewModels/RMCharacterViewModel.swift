@@ -81,11 +81,6 @@ class RMCharacterViewModel {
                 let moreResults = responseModel.results
                 let info = responseModel.info
                 strongSelf.apiInfo = info
-
-                let originalCount = strongSelf.characters.count
-                let newCount = moreResults.count
-                let total = originalCount+newCount
-                let startingIndex = total - newCount
                 strongSelf.characters.append(contentsOf: moreResults)
 
                 DispatchQueue.main.async {

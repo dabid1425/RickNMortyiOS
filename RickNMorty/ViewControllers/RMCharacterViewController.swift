@@ -28,7 +28,7 @@ class RMCharacterListViewController: UIViewController {
         characterViewModel.delegate = self
         imageButton1.delegate = self
         imageButton2.delegate = self
-        
+        imageButton1.imageButton.image = characterViewModel.tableView ? UIImage(named: "tablecells.fill") : UIImage(named: "tablecells")
     }
 
     @objc private func didTapSearch() {
