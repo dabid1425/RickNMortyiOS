@@ -17,9 +17,9 @@ final class RMTabBarController: UITabBarController {
     }
 
     private func setUpTabs() {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterVC", bundle:nil)
-        if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterListViewController") as? RMCharacterListViewController {
-            let locationsVC = RMLocationListViewController()
+        let characterStoryboard : UIStoryboard = UIStoryboard(name: "RMCharacterVC", bundle:nil)
+        let locationStoryboard : UIStoryboard = UIStoryboard(name: "RMLocationVC", bundle:nil)
+        if let charactersVC = characterStoryboard.instantiateViewController(withIdentifier: "RMCharacterListViewController") as? RMCharacterListViewController, let locationsVC = locationStoryboard.instantiateViewController(withIdentifier: "RMLocationListViewController") as? RMLocationListViewController{
             let episodesVC = RMEpisodeListViewController()
 
             charactersVC.navigationItem.largeTitleDisplayMode = .automatic

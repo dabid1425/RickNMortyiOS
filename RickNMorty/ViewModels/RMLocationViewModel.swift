@@ -31,7 +31,7 @@ class RMLocationViewModel {
 
     // Location response info
     // WIll contain next url, if present
-    private var apiInfo: RMGetAllLocationsResponse.Info?
+    var apiInfo: RMGetAllLocationsResponse.Info?
     private var cellViewModelList: [RMLocationViewCellModel] = []
     public var shouldShowLoadMoreIndicator: Bool {
         return apiInfo?.next != nil
@@ -45,6 +45,9 @@ class RMLocationViewModel {
 
     init() {}
 
+    func getLocationCellModel() -> [RMLocationViewCellModel] {
+        return cellViewModelList
+    }
     public func registerDidFinishPaginationBlock(_ block: @escaping () -> Void) {
         self.didFinishPagination = block
     }
@@ -79,7 +82,7 @@ class RMLocationViewModel {
                 strongSelf.locations.append(contentsOf: moreResults)
                 DispatchQueue.main.async {
                     strongSelf.isLoadingMoreLocations = false
-
+                    self?.delegate?.didFetchInitialLocations()
                     // Notify via callback
                     strongSelf.didFinishPagination?()
                 }
