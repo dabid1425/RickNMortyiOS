@@ -16,6 +16,9 @@ class RMEpisodeViewCellModel {
     public var name: String {
         return episode.name
     }
+    public var episodeName: String {
+        return episode.episode
+    }
     public var created: String {
         return episode.created
     }

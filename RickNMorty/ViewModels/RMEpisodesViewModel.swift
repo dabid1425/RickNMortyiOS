@@ -14,12 +14,10 @@ import Foundation
 protocol RMEpisodesListViewViewModelDelegate: AnyObject {
     func didLoadInitialEpisodes()
     func didLoadMoreEpisodes()
-
-    func didSelectEpisode(_ episode: RMEpisode)
 }
 class RMEpisodesViewModel {
     public weak var delegate: RMEpisodesListViewViewModelDelegate?
-    private var isLoadingMoreCharacters = false
+    public var isLoadingMoreCharacters = false
     private var episodes: [RMEpisode] = [] {
         didSet {
             for episode in episodes {
@@ -33,8 +31,10 @@ class RMEpisodesViewModel {
     
     private var cellViewModels: [RMEpisodeViewCellModel] = []
     
-    private var apiInfo: RMGetAllEpisodesResponse.Info? = nil
-    
+    public var apiInfo: RMGetAllEpisodesResponse.Info? = nil
+    public func getCellViewModels() -> [RMEpisodeViewCellModel]{
+        return cellViewModels
+    }
     public func fetchAdditionalEpisodes(url: URL) {
         guard !isLoadingMoreCharacters else {
             return
@@ -87,5 +87,7 @@ class RMEpisodesViewModel {
         }
     }
 
-    
+    public var shouldShowLoadMoreIndicator: Bool {
+        return apiInfo?.next != nil
+    }
 }

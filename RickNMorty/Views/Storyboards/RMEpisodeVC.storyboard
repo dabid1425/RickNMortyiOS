@@ -35,6 +35,10 @@
                             <constraint firstItem="ObV-zK-632" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pE8-9Z-iOz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="spinner" destination="bJf-Iz-2D7" id="KNC-pk-2R7"/>
+                        <outlet property="tableView" destination="ObV-zK-632" id="A57-My-gEl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

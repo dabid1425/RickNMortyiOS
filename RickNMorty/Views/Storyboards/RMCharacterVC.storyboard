@@ -45,54 +45,48 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a65-52-mdv" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="1.5" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="10" y="10" width="33.5" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="0MB-L4-xwv"/>
-                                                                    <constraint firstAttribute="height" constant="50" id="bdD-XJ-tAY"/>
-                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="a65-52-mdv" firstAttribute="centerX" secondItem="jPF-SM-kEi" secondAttribute="centerX" id="fQb-FS-uso"/>
-                                                            <constraint firstItem="a65-52-mdv" firstAttribute="centerY" secondItem="jPF-SM-kEi" secondAttribute="centerY" id="gNQ-Kh-iLY"/>
+                                                            <constraint firstAttribute="bottom" secondItem="a65-52-mdv" secondAttribute="bottom" constant="10" id="42Q-GS-o4y"/>
+                                                            <constraint firstAttribute="trailing" secondItem="a65-52-mdv" secondAttribute="trailing" constant="10" id="GKK-Ec-9KK"/>
+                                                            <constraint firstItem="a65-52-mdv" firstAttribute="top" secondItem="jPF-SM-kEi" secondAttribute="top" constant="10" id="Yfr-3a-7pd"/>
+                                                            <constraint firstItem="a65-52-mdv" firstAttribute="leading" secondItem="jPF-SM-kEi" secondAttribute="leading" constant="10" id="vJ3-NI-hBf"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-aP-gWO">
                                                         <rect key="frame" x="53.5" y="0.0" width="53" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjN-IY-22G" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="1.5" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="10" y="10" width="33" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="1GC-m2-aSv"/>
-                                                                    <constraint firstAttribute="height" constant="50" id="AB0-af-JD2"/>
-                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="centerX" secondItem="Rv9-aP-gWO" secondAttribute="centerX" id="e9m-vG-XsR"/>
-                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="centerY" secondItem="Rv9-aP-gWO" secondAttribute="centerY" id="iIi-QL-emk"/>
+                                                            <constraint firstAttribute="trailing" secondItem="sjN-IY-22G" secondAttribute="trailing" constant="10" id="CZE-UF-N7w"/>
+                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="top" secondItem="Rv9-aP-gWO" secondAttribute="top" constant="10" id="SpO-9T-xeK"/>
+                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="leading" secondItem="Rv9-aP-gWO" secondAttribute="leading" constant="10" id="Xnm-ki-k9z"/>
+                                                            <constraint firstAttribute="bottom" secondItem="sjN-IY-22G" secondAttribute="bottom" constant="10" id="YzM-PD-A2p"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xR-WC-A8l">
                                                         <rect key="frame" x="106.5" y="0.0" width="53.5" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Vo-XX6" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="2" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="10" y="10" width="33.5" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="8GW-Is-6vU"/>
-                                                                    <constraint firstAttribute="height" constant="50" id="VWq-Ux-QIP"/>
-                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="centerX" secondItem="8xR-WC-A8l" secondAttribute="centerX" id="Lsd-Gh-jH8"/>
-                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="centerY" secondItem="8xR-WC-A8l" secondAttribute="centerY" id="rHo-U1-ENq"/>
+                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="top" secondItem="8xR-WC-A8l" secondAttribute="top" constant="10" id="6aR-sG-y1a"/>
+                                                            <constraint firstAttribute="trailing" secondItem="MXV-Vo-XX6" secondAttribute="trailing" constant="10" id="LNl-gB-h2s"/>
+                                                            <constraint firstAttribute="bottom" secondItem="MXV-Vo-XX6" secondAttribute="bottom" constant="10" id="SUx-HB-The"/>
+                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="leading" secondItem="8xR-WC-A8l" secondAttribute="leading" constant="10" id="TcF-lb-1Jv"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
