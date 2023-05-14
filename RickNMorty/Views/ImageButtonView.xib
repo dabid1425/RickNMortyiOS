@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,48 +20,65 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zle-b0-NvF" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnx-WO-KId">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-gb-0JO" customClass="CurvedLabelImageView" customModule="RickNMorty" customModuleProvider="target">
-                            <rect key="frame" x="10" y="10" width="80" height="80"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-8n-hVA">
-                            <rect key="frame" x="10" y="10" width="80" height="80"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain"/>
-                            <connections>
-                                <action selector="itemClicked:" destination="-1" eventType="touchUpInside" id="k20-sh-KdN"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zle-b0-NvF" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-gb-0JO" customClass="CurvedLabelImageView" customModule="RickNMorty" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-8n-hVA">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="itemClicked:" destination="-1" eventType="touchUpInside" id="k20-sh-KdN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="5xm-n4-JEf"/>
+                                <constraint firstAttribute="trailing" secondItem="zlo-8n-hVA" secondAttribute="trailing" id="I17-vo-XBN"/>
+                                <constraint firstItem="zlo-8n-hVA" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="J4C-4Z-0Qq"/>
+                                <constraint firstAttribute="bottom" secondItem="zlo-8n-hVA" secondAttribute="bottom" id="MDn-VE-KQv"/>
+                                <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" id="QfC-NA-TWe"/>
+                                <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="XgW-ZH-ARK"/>
+                                <constraint firstItem="zlo-8n-hVA" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="mrz-NA-GFq"/>
+                                <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" id="ygT-Tb-YpV"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circularRadius" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" constant="10" id="5rC-NV-40y"/>
-                        <constraint firstItem="zlo-8n-hVA" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" constant="10" id="KXZ-RN-Jbr"/>
-                        <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" constant="10" id="OAr-c3-VOg"/>
-                        <constraint firstItem="zlo-8n-hVA" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" constant="10" id="SlW-tF-nVe"/>
-                        <constraint firstAttribute="trailing" secondItem="zlo-8n-hVA" secondAttribute="trailing" constant="10" id="b41-9T-lmh"/>
-                        <constraint firstAttribute="bottom" secondItem="zlo-8n-hVA" secondAttribute="bottom" constant="10" id="c3U-Tt-t3g"/>
-                        <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" constant="10" id="d1X-je-F3e"/>
-                        <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" constant="10" id="gnC-at-8Xw"/>
+                        <constraint firstAttribute="bottom" secondItem="zle-b0-NvF" secondAttribute="bottom" constant="10" id="YIe-Do-aok"/>
+                        <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="qnx-WO-KId" secondAttribute="top" constant="10" id="mlJ-Gw-7ct"/>
+                        <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="qnx-WO-KId" secondAttribute="leading" constant="10" id="njc-23-aUb"/>
+                        <constraint firstAttribute="trailing" secondItem="zle-b0-NvF" secondAttribute="trailing" constant="10" id="wvd-l8-6ea"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="circularRadius" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
-                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="MF6-Qb-f82"/>
-                <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Tu4-Xb-Zu1"/>
-                <constraint firstItem="zle-b0-NvF" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="10" id="bX3-eq-8Of"/>
-                <constraint firstItem="zle-b0-NvF" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="10" id="sZI-2a-9Kh"/>
+                <constraint firstItem="qnx-WO-KId" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="74r-JQ-dKn"/>
+                <constraint firstItem="qnx-WO-KId" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Sd8-b5-jrE"/>
+                <constraint firstItem="qnx-WO-KId" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="VVw-TW-rdT"/>
+                <constraint firstItem="qnx-WO-KId" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="prY-ZQ-Nzi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-51" y="20"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

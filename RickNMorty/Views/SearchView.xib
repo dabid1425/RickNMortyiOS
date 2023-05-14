@@ -21,19 +21,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-8h-brc" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
-                            <rect key="frame" x="5" y="5" width="284" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="274" height="30"/>
                             <subviews>
                                 <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by product name..." translatesAutoresizingMaskIntoConstraints="NO" id="SJF-bZ-8mK">
-                                    <rect key="frame" x="0.0" y="0.0" width="284" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="30"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="SJF-bZ-8mK" firstAttribute="leading" secondItem="gC9-8h-brc" secondAttribute="leading" id="0gk-He-UhL"/>
-                                <constraint firstAttribute="bottom" secondItem="SJF-bZ-8mK" secondAttribute="bottom" id="Gch-dh-ROI"/>
-                                <constraint firstAttribute="trailing" secondItem="SJF-bZ-8mK" secondAttribute="trailing" id="gyE-1G-Jp2"/>
-                                <constraint firstItem="SJF-bZ-8mK" firstAttribute="top" secondItem="gC9-8h-brc" secondAttribute="top" id="pD7-aW-edg"/>
+                                <constraint firstAttribute="trailing" secondItem="SJF-bZ-8mK" secondAttribute="trailing" id="GqD-5v-boJ"/>
+                                <constraint firstItem="SJF-bZ-8mK" firstAttribute="leading" secondItem="gC9-8h-brc" secondAttribute="leading" id="Mw2-jK-A2Q"/>
+                                <constraint firstAttribute="bottom" secondItem="SJF-bZ-8mK" secondAttribute="bottom" id="U9g-OZ-VCM"/>
+                                <constraint firstItem="SJF-bZ-8mK" firstAttribute="top" secondItem="gC9-8h-brc" secondAttribute="top" id="zps-Mm-hCC"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
@@ -50,21 +50,20 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="gC9-8h-brc" secondAttribute="trailing" constant="5" id="7W4-LO-8Er"/>
-                        <constraint firstAttribute="bottom" secondItem="gC9-8h-brc" secondAttribute="bottom" constant="5" id="Kjy-AG-YCD"/>
-                        <constraint firstItem="gC9-8h-brc" firstAttribute="leading" secondItem="maI-JC-kgi" secondAttribute="leading" constant="5" id="TXd-8d-Jbp"/>
-                        <constraint firstAttribute="height" constant="50" id="hZx-ri-f1q"/>
-                        <constraint firstItem="gC9-8h-brc" firstAttribute="top" secondItem="maI-JC-kgi" secondAttribute="top" constant="5" id="rFb-pj-1w3"/>
+                        <constraint firstItem="gC9-8h-brc" firstAttribute="top" secondItem="maI-JC-kgi" secondAttribute="top" constant="10" id="R2m-ro-mbF"/>
+                        <constraint firstItem="gC9-8h-brc" firstAttribute="leading" secondItem="maI-JC-kgi" secondAttribute="leading" constant="10" id="Vf9-DB-o6l"/>
+                        <constraint firstAttribute="trailing" secondItem="gC9-8h-brc" secondAttribute="trailing" constant="10" id="ert-rs-cOB"/>
+                        <constraint firstAttribute="bottom" secondItem="gC9-8h-brc" secondAttribute="bottom" constant="10" id="kOC-nP-bE6"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="maI-JC-kgi" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="0L7-BC-leu"/>
-                <constraint firstItem="maI-JC-kgi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Vl-82-MFP"/>
-                <constraint firstItem="maI-JC-kgi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JMw-8T-LJR"/>
-                <constraint firstItem="maI-JC-kgi" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="e3t-Ul-eSA"/>
+                <constraint firstItem="maI-JC-kgi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O5N-AJ-Zse"/>
+                <constraint firstItem="maI-JC-kgi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ViV-J2-Iro"/>
+                <constraint firstAttribute="trailing" secondItem="maI-JC-kgi" secondAttribute="trailing" id="luS-Ny-cqg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="maI-JC-kgi" secondAttribute="bottom" id="pYr-BW-DLW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
