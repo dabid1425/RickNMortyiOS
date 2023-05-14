@@ -39,7 +39,11 @@ class RMCharacterListViewController: UIViewController {
         tabelView.dataSource = self
         tabelView.delegate = self
         tabelView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: CharacterTableViewCell.cellIdentifier)
-        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.itemSize = CGSize(width: collectionView.bounds.width/2, height: collectionView.bounds.width/2)
+        collectionView.collectionViewLayout = flowLayout
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "CharacterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
@@ -111,21 +115,9 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let bounds = collectionView.bounds
-        let width: CGFloat
-        if UIDevice.isiPhone {
-            width = (bounds.width-30)/2
-        } else {
-            // mac | ipad
-            width = (bounds.width-50)/4
-        }
-        
-        return CGSize(
-            width: width,
-            height: width * 1.5
-        )
+        return CGSize(width: collectionView.bounds.width/2, height: collectionView.bounds.width/2)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         displayDetailVC(indexPath: indexPath)
     }
