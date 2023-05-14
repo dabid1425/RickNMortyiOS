@@ -24,13 +24,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zle-b0-NvF" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-gb-0JO" customClass="CurvedLabelImageView" customModule="RickNMorty" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-8n-hVA">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
                                     <connections>
@@ -40,27 +40,30 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="5xm-n4-JEf"/>
+                                <constraint firstItem="8LL-gb-0JO" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" constant="10" id="5xm-n4-JEf"/>
                                 <constraint firstAttribute="trailing" secondItem="zlo-8n-hVA" secondAttribute="trailing" id="I17-vo-XBN"/>
                                 <constraint firstItem="zlo-8n-hVA" firstAttribute="leading" secondItem="zle-b0-NvF" secondAttribute="leading" id="J4C-4Z-0Qq"/>
                                 <constraint firstAttribute="bottom" secondItem="zlo-8n-hVA" secondAttribute="bottom" id="MDn-VE-KQv"/>
-                                <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" id="QfC-NA-TWe"/>
-                                <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="XgW-ZH-ARK"/>
+                                <constraint firstAttribute="bottom" secondItem="8LL-gb-0JO" secondAttribute="bottom" constant="10" id="QfC-NA-TWe"/>
+                                <constraint firstItem="8LL-gb-0JO" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" constant="10" id="XgW-ZH-ARK"/>
                                 <constraint firstItem="zlo-8n-hVA" firstAttribute="top" secondItem="zle-b0-NvF" secondAttribute="top" id="mrz-NA-GFq"/>
-                                <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" id="ygT-Tb-YpV"/>
+                                <constraint firstAttribute="trailing" secondItem="8LL-gb-0JO" secondAttribute="trailing" constant="10" id="ygT-Tb-YpV"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circularRadius" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="NO"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="zle-b0-NvF" secondAttribute="bottom" constant="10" id="YIe-Do-aok"/>
-                        <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="qnx-WO-KId" secondAttribute="top" constant="10" id="mlJ-Gw-7ct"/>
-                        <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="qnx-WO-KId" secondAttribute="leading" constant="10" id="njc-23-aUb"/>
-                        <constraint firstAttribute="trailing" secondItem="zle-b0-NvF" secondAttribute="trailing" constant="10" id="wvd-l8-6ea"/>
+                        <constraint firstAttribute="bottom" secondItem="zle-b0-NvF" secondAttribute="bottom" id="YIe-Do-aok"/>
+                        <constraint firstItem="zle-b0-NvF" firstAttribute="top" secondItem="qnx-WO-KId" secondAttribute="top" id="mlJ-Gw-7ct"/>
+                        <constraint firstItem="zle-b0-NvF" firstAttribute="leading" secondItem="qnx-WO-KId" secondAttribute="leading" id="njc-23-aUb"/>
+                        <constraint firstAttribute="trailing" secondItem="zle-b0-NvF" secondAttribute="trailing" id="wvd-l8-6ea"/>
                     </constraints>
                 </view>
             </subviews>

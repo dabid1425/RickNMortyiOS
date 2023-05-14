@@ -22,20 +22,60 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cBn-hd-K9U">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-Ia-OAA" customClass="SearchView" customModule="RickNMorty" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-Q6-SpD">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-Ia-OAA" customClass="SearchView" customModule="RickNMorty" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="10" width="140" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="0qk-Ia-OAA" firstAttribute="leading" secondItem="I7t-Q6-SpD" secondAttribute="leading" constant="10" id="Hwq-2A-2Db"/>
+                                                    <constraint firstItem="0qk-Ia-OAA" firstAttribute="top" secondItem="I7t-Q6-SpD" secondAttribute="top" constant="10" id="NOO-KX-OVa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0qk-Ia-OAA" secondAttribute="trailing" constant="10" id="mHY-NK-5oL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0qk-Ia-OAA" secondAttribute="bottom" constant="10" id="ziq-Ff-Ndl"/>
+                                                </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3xn-mA-Zfx">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="50"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a65-52-mdv" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPF-SM-kEi">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a65-52-mdv" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="0MB-L4-xwv"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="bdD-XJ-tAY"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="a65-52-mdv" firstAttribute="centerX" secondItem="jPF-SM-kEi" secondAttribute="centerX" id="fQb-FS-uso"/>
+                                                            <constraint firstItem="a65-52-mdv" firstAttribute="centerY" secondItem="jPF-SM-kEi" secondAttribute="centerY" id="gNQ-Kh-iLY"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Vo-XX6" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xR-WC-A8l">
                                                         <rect key="frame" x="80" y="0.0" width="80" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Vo-XX6" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="8GW-Is-6vU"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="VWq-Ux-QIP"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="centerX" secondItem="8xR-WC-A8l" secondAttribute="centerX" id="Lsd-Gh-jH8"/>
+                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="centerY" secondItem="8xR-WC-A8l" secondAttribute="centerY" id="rHo-U1-ENq"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                             </stackView>

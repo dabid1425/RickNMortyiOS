@@ -21,10 +21,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-8h-brc" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="274" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
                             <subviews>
                                 <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by product name..." translatesAutoresizingMaskIntoConstraints="NO" id="SJF-bZ-8mK">
-                                    <rect key="frame" x="0.0" y="0.0" width="274" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
@@ -50,10 +50,10 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="gC9-8h-brc" firstAttribute="top" secondItem="maI-JC-kgi" secondAttribute="top" constant="10" id="R2m-ro-mbF"/>
-                        <constraint firstItem="gC9-8h-brc" firstAttribute="leading" secondItem="maI-JC-kgi" secondAttribute="leading" constant="10" id="Vf9-DB-o6l"/>
-                        <constraint firstAttribute="trailing" secondItem="gC9-8h-brc" secondAttribute="trailing" constant="10" id="ert-rs-cOB"/>
-                        <constraint firstAttribute="bottom" secondItem="gC9-8h-brc" secondAttribute="bottom" constant="10" id="kOC-nP-bE6"/>
+                        <constraint firstItem="gC9-8h-brc" firstAttribute="top" secondItem="maI-JC-kgi" secondAttribute="top" id="R2m-ro-mbF"/>
+                        <constraint firstItem="gC9-8h-brc" firstAttribute="leading" secondItem="maI-JC-kgi" secondAttribute="leading" id="Vf9-DB-o6l"/>
+                        <constraint firstAttribute="trailing" secondItem="gC9-8h-brc" secondAttribute="trailing" id="ert-rs-cOB"/>
+                        <constraint firstAttribute="bottom" secondItem="gC9-8h-brc" secondAttribute="bottom" id="kOC-nP-bE6"/>
                     </constraints>
                 </view>
             </subviews>
