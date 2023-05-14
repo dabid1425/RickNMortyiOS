@@ -42,10 +42,10 @@
                                                 <rect key="frame" x="160" y="0.0" width="160" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPF-SM-kEi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a65-52-mdv" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="1.5" y="0.0" width="50" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="0MB-L4-xwv"/>
@@ -59,11 +59,29 @@
                                                             <constraint firstItem="a65-52-mdv" firstAttribute="centerY" secondItem="jPF-SM-kEi" secondAttribute="centerY" id="gNQ-Kh-iLY"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-aP-gWO">
+                                                        <rect key="frame" x="53.5" y="0.0" width="53" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjN-IY-22G" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="1.5" y="0.0" width="50" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="1GC-m2-aSv"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="AB0-af-JD2"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="centerX" secondItem="Rv9-aP-gWO" secondAttribute="centerX" id="e9m-vG-XsR"/>
+                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="centerY" secondItem="Rv9-aP-gWO" secondAttribute="centerY" id="iIi-QL-emk"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xR-WC-A8l">
-                                                        <rect key="frame" x="80" y="0.0" width="80" height="50"/>
+                                                        <rect key="frame" x="106.5" y="0.0" width="53.5" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Vo-XX6" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="2" y="0.0" width="50" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="8GW-Is-6vU"/>
@@ -136,8 +154,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Svs-5p-LPr" id="cj1-db-4Ox"/>
-                        <outlet property="imageButton1" destination="a65-52-mdv" id="5K3-cS-r8B"/>
-                        <outlet property="imageButton2" destination="MXV-Vo-XX6" id="yJb-oa-esq"/>
+                        <outlet property="imageButton1" destination="a65-52-mdv" id="1fs-qp-Hw6"/>
+                        <outlet property="imageButton2" destination="sjN-IY-22G" id="EfU-yN-XQX"/>
+                        <outlet property="imageButton3" destination="MXV-Vo-XX6" id="bem-hq-MW2"/>
                         <outlet property="searchView" destination="0qk-Ia-OAA" id="e76-EB-2rI"/>
                         <outlet property="spinner" destination="FDM-xj-D9z" id="EIS-t0-VQT"/>
                         <outlet property="tabelView" destination="1Xy-Ng-0ZJ" id="dHN-lM-Gp5"/>

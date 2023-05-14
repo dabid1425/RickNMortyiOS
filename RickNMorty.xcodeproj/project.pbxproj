@@ -196,6 +196,34 @@
 			path = LocationTableCell;
 			sourceTree = "<group>";
 		};
+		3342E7092A11435800B191D9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				33B16CD22A0C14CF00516439 /* RMCharacterVC.storyboard */,
+				33B16D542A0D5C9E00516439 /* RMCharacterDetailVC.storyboard */,
+				33B401952A1085AE00F0BF4D /* RMLocationVC.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3342E70A2A11435F00B191D9 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				3350931A2A0F0A7100601704 /* SearchView.xib */,
+				3350931C2A0F0A8300601704 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		3342E70B2A11436600B191D9 /* ImageButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				335093162A0EFFFC00601704 /* ImageButtonView.xib */,
+				335093182A0F051200601704 /* ImageButtonView.swift */,
+			);
+			path = ImageButtonView;
+			sourceTree = "<group>";
+		};
 		336F26F82A0BE1BF003EF2C7 = {
 			isa = PBXGroup;
 			children = (
@@ -258,13 +286,9 @@
 		339E094F2A0BF4B20049956E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				33B16CD22A0C14CF00516439 /* RMCharacterVC.storyboard */,
-				33B16D542A0D5C9E00516439 /* RMCharacterDetailVC.storyboard */,
-				335093162A0EFFFC00601704 /* ImageButtonView.xib */,
-				335093182A0F051200601704 /* ImageButtonView.swift */,
-				3350931A2A0F0A7100601704 /* SearchView.xib */,
-				3350931C2A0F0A8300601704 /* SearchView.swift */,
-				33B401952A1085AE00F0BF4D /* RMLocationVC.storyboard */,
+				3342E70B2A11436600B191D9 /* ImageButtonView */,
+				3342E70A2A11435F00B191D9 /* SearchView */,
+				3342E7092A11435800B191D9 /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";

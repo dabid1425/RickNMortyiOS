@@ -10,6 +10,7 @@ import UIKit
 class RMCharacterListViewController: UIViewController {
     
     
+    @IBOutlet var imageButton3: ImageButtonView!
     @IBOutlet var imageButton1: ImageButtonView!
     @IBOutlet var imageButton2: ImageButtonView!
     @IBOutlet var searchView: SearchView!
