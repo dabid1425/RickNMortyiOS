@@ -41,6 +41,9 @@ class ImageButtonView : UIView{
     }
     
     @IBAction func itemClicked(_ sender: UIButton) {
-        delegate?.buttonClicked(viewModel: viewModel)
+        if let viewModel = viewModel {
+            delegate?.buttonClicked(viewModel: viewModel)
+        }
+       
     }
 }

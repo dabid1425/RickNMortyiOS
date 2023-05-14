@@ -18,6 +18,7 @@ class RMCharacterListViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tabelView: UITableView!
     var changeViewStyle = ImageButtonModel(image: "tablecells.fill", isRounded: true, isSystemNamed: true, buttonType: .changeView)
+    var changeSortStyle = ImageButtonModel(image: "filter", isRounded: true, isSystemNamed: false, buttonType: .sort)
     private var characterViewModel = RMCharacterViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class RMCharacterListViewController: UIViewController {
     
     private func setImageButtons(){
         imageButton1.configure(viewModel: changeViewStyle)
-        //        imageButton2.configure()
+        imageButton2.configure(viewModel: changeSortStyle)
     }
     private func registerCells() {
         tabelView.dataSource = self
@@ -53,6 +54,47 @@ class RMCharacterListViewController: UIViewController {
     private func startSpinner(){
         spinner.startAnimating()
         spinner.alpha = 1
+    }
+    
+    private func changeSortIcon(sortType: SortingOption) {
+        self.characterViewModel.sortType = sortType
+        changeSortStyle.setImageView(image: sortType.imageString)
+        characterViewModel.sortData()
+        characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+        imageButton2.configure(viewModel: changeSortStyle)
+        
+    }
+    private func displayAlertSheet(){
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // Create your actions - take a look at different style attributes
+        let ascending = UIAlertAction(title: "Ascending", style: .default) { (action) in
+            self.changeSortIcon(sortType: .ascending() )
+        }
+        
+        let descending = UIAlertAction(title: "Descending", style: .default) { (action) in
+            self.changeSortIcon(sortType: .descending())
+        }
+        
+        let alive = UIAlertAction(title: "Alive", style: .default) { (action) in
+            self.changeSortIcon(sortType: .alive())
+        }
+        let dead = UIAlertAction(title: "Dead", style: .default) { (action) in
+            self.changeSortIcon(sortType: .dead())
+        }
+        let unknown = UIAlertAction(title: "Unknown", style: .default) { (action) in
+            self.changeSortIcon(sortType: .unknown())
+        }
+        
+        
+        // Add the actions to your actionSheet
+        actionSheet.addAction(ascending)
+        actionSheet.addAction(descending)
+        actionSheet.addAction(alive)
+        actionSheet.addAction(dead)
+        actionSheet.addAction(unknown)
+        // Present the controller
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     private func stopSpinner(){
@@ -157,6 +199,8 @@ extension RMCharacterListViewController: ImageButtonViewClicked{
             tabelView.isHidden = !characterViewModel.tableView
             collectionView.isHidden = characterViewModel.tableView
             characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+        } else {
+            displayAlertSheet()
         }
     }
     

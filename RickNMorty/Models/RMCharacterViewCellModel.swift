@@ -32,16 +32,44 @@ class RMCharacterViewCellModel {
     }
     
     public var gradientStartColor: UIColor {
-        return character.status == .dead ? .systemPurple : .systemTeal
+        switch (character.status){
+        case .dead:
+            return .systemPurple
+        case .alive:
+            return .systemTeal
+        default:
+            return .yellow
+        }
     }
     public var gradientEndColor: UIColor {
-        return character.status == .dead ? .systemRed : .systemGreen
+        switch (character.status){
+        case .dead:
+            return .systemRed
+        case .alive:
+            return .systemGreen
+        default:
+            return .systemPink
+        }
     }
     public var labelTextColor: UIColor {
-        return character.status == .dead ? .red : .green
+        switch (character.status){
+        case .dead:
+            return .red
+        case .alive:
+            return .green
+        default:
+            return .yellow
+        }
     }
     public var borderColor: UIColor {
-        return character.status == .dead ? .red : .green
+        switch (character.status){
+        case .dead:
+            return .red
+        case .alive:
+            return .green
+        default:
+            return .yellow
+        }
     }
     
     public func getCharacter() -> RMCharacter {
@@ -57,7 +85,5 @@ class RMCharacterViewCellModel {
             let episodeModel = RMEpisodeViewModel(episodeDataUrl: episodeURL)
             episodeModel.fetchEpisode(completion: completion)
         }
-       
     }
-
 }

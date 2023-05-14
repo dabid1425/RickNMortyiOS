@@ -25,7 +25,7 @@ class RMCharacterViewModel {
     public weak var delegate: RMCharacterListViewViewModelDelegate?
     var tableView = true
     public var isLoadingMoreCharacters = false
-
+    var sortType: SortingOption!
     private var characters: [RMCharacter] = [] {
         didSet {
             for character in characters {
@@ -42,7 +42,22 @@ class RMCharacterViewModel {
     public func getCharacters() -> [RMCharacterViewCellModel]{
         return cellViewModelList
     }
-    
+    func sortData() {
+        switch sortType {
+        case .ascending:
+            cellViewModelList.sort { $0.name < $1.name }
+        case .descending:
+            cellViewModelList.sort { $0.name > $1.name }
+        case .alive:
+            cellViewModelList.sort { $0.characterStatusText == "Alive" && $1.characterStatusText != "Alive" }
+        case .dead:
+            cellViewModelList.sort { $0.characterStatusText == "Dead" && $1.characterStatusText != "Dead" }
+        case .unknown:
+            cellViewModelList.sort { $0.characterStatusText == "Unknown" && $1.characterStatusText != "Unknown" }
+        case .none:
+            break
+        }
+    }
     public func fetchCharacters() {
         RMService.shared.execute(
             .listCharactersRequests,
@@ -82,7 +97,7 @@ class RMCharacterViewModel {
                 let info = responseModel.info
                 strongSelf.apiInfo = info
                 strongSelf.characters.append(contentsOf: moreResults)
-
+                self?.sortData()
                 DispatchQueue.main.async {
                     strongSelf.delegate?.didLoadMoreCharacters()
                     strongSelf.isLoadingMoreCharacters = false

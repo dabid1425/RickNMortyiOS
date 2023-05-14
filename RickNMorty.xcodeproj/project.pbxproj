@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		330A6F2D2A0FE0620025CD7A /* ImageButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A6F2C2A0FE0620025CD7A /* ImageButtonModel.swift */; };
-		330A6F2F2A0FE8940025CD7A /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A6F2E2A0FE8940025CD7A /* ButtonType.swift */; };
+		330A6F2F2A0FE8940025CD7A /* CustomEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A6F2E2A0FE8940025CD7A /* CustomEnums.swift */; };
 		332D83892A0EA6C50091D1CB /* GradientBorderShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D83882A0EA6C50091D1CB /* GradientBorderShadowView.swift */; };
 		332D83912A0ED8560091D1CB /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332D838F2A0ED8560091D1CB /* CharacterCollectionViewCell.xib */; };
 		3333A3632A107877009AB190 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333A3612A107877009AB190 /* LocationTableViewCell.swift */; };
@@ -84,7 +84,7 @@
 /* Begin PBXFileReference section */
 		251757B2FDD8110D2B9A6262 /* Pods-RickNMorty-RickNMortyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickNMorty-RickNMortyUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickNMorty-RickNMortyUITests/Pods-RickNMorty-RickNMortyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		330A6F2C2A0FE0620025CD7A /* ImageButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonModel.swift; sourceTree = "<group>"; };
-		330A6F2E2A0FE8940025CD7A /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		330A6F2E2A0FE8940025CD7A /* CustomEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnums.swift; sourceTree = "<group>"; };
 		332D83882A0EA6C50091D1CB /* GradientBorderShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBorderShadowView.swift; sourceTree = "<group>"; };
 		332D838F2A0ED8560091D1CB /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 		3333A3612A107877009AB190 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 				339E09802A0C006E0049956E /* RMEpisode.swift */,
 				339E09812A0C006E0049956E /* RMCharacterGender.swift */,
 				339E09822A0C006E0049956E /* RMSingleLocation.swift */,
-				330A6F2E2A0FE8940025CD7A /* ButtonType.swift */,
+				330A6F2E2A0FE8940025CD7A /* CustomEnums.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -693,7 +693,7 @@
 				333CCEFA2A0FCCFA00FABE98 /* RMEpisodeViewModel.swift in Sources */,
 				3350930F2A0EDC6900601704 /* CircularImageView.swift in Sources */,
 				3350931D2A0F0A8300601704 /* SearchView.swift in Sources */,
-				330A6F2F2A0FE8940025CD7A /* ButtonType.swift in Sources */,
+				330A6F2F2A0FE8940025CD7A /* CustomEnums.swift in Sources */,
 				339E09902A0C006E0049956E /* RMGetAllEpisodesResponse.swift in Sources */,
 				339E09752A0C003A0049956E /* RMImageLoader.swift in Sources */,
 				3333A3632A107877009AB190 /* LocationTableViewCell.swift in Sources */,
