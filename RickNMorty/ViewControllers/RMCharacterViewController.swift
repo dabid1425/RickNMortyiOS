@@ -16,7 +16,7 @@ class RMCharacterListViewController: UIViewController {
     @IBOutlet var searchView: SearchView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     var changeViewStyle = ImageButtonModel(image: "tablecells.fill", isRounded: true, isSystemNamed: true, buttonType: .changeView)
     var changeSortStyle = ImageButtonModel(image: "filter", isRounded: true, isSystemNamed: false, buttonType: .sort)
     private var characterViewModel = RMCharacterViewModel()
@@ -37,10 +37,11 @@ class RMCharacterListViewController: UIViewController {
         imageButton1.configure(viewModel: changeViewStyle)
         imageButton2.configure(viewModel: changeSortStyle)
     }
+    
     private func registerCells() {
-        tabelView.dataSource = self
-        tabelView.delegate = self
-        tabelView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: CharacterTableViewCell.cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: CharacterTableViewCell.cellIdentifier)
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 10
@@ -51,6 +52,7 @@ class RMCharacterListViewController: UIViewController {
         collectionView.register(UINib(nibName: "CharacterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
         
     }
+    
     private func startSpinner(){
         spinner.startAnimating()
         spinner.alpha = 1
@@ -60,11 +62,41 @@ class RMCharacterListViewController: UIViewController {
         self.characterViewModel.sortType = sortType
         changeSortStyle.setImageView(image: sortType.imageString)
         characterViewModel.sortData()
-        characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+        characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
         imageButton2.configure(viewModel: changeSortStyle)
         
     }
-    private func displayAlertSheet(){
+    
+    private func changeDisplayView(viewModel: ImageButtonModel, viewOption: ViewOption){
+        characterViewModel.tableView = viewOption == .tableView
+        viewModel.setImageView(image: characterViewModel.tableView ? "tablecells.fill" : "tablecells")
+        imageButton1.configure(viewModel: viewModel)
+        tableView.isHidden = !characterViewModel.tableView
+        collectionView.isHidden = characterViewModel.tableView
+        characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
+    }
+    
+    private func displayViewOption(viewModel: ImageButtonModel){
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // Create your actions - take a look at different style attributes
+        let tableView = UIAlertAction(title: "TableView", style: .default) { (action) in
+            self.changeDisplayView(viewModel: viewModel, viewOption: .tableView)
+        }
+        
+        let collectionView = UIAlertAction(title: "CollectionView", style: .default) { (action) in
+            self.changeDisplayView(viewModel: viewModel, viewOption: .collectionView)
+        }
+        
+        
+        // Add the actions to your actionSheet
+        actionSheet.addAction(tableView)
+        actionSheet.addAction(collectionView)
+        // Present the controller
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func displaySortingAlertSheet(){
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // Create your actions - take a look at different style attributes
@@ -100,7 +132,7 @@ class RMCharacterListViewController: UIViewController {
     private func stopSpinner(){
         spinner.stopAnimating()
         spinner.alpha = 0
-        characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+        characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
     }
     private func displayDetailVC(indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
@@ -116,7 +148,7 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tabelView.dequeueReusableCell(
+        guard let cell = tableView.dequeueReusableCell(
             withIdentifier: CharacterTableViewCell.cellIdentifier,
             for: indexPath
         ) as? CharacterTableViewCell else {
@@ -137,7 +169,7 @@ extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
     
     func didLoadMoreCharacters() {
         stopSpinner()
-        characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+        characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
     }
 }
 
@@ -193,16 +225,9 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
 extension RMCharacterListViewController: ImageButtonViewClicked{
     func buttonClicked(viewModel: ImageButtonModel) {
         if viewModel.buttonTypeEnum == .changeView {
-            characterViewModel.tableView = !characterViewModel.tableView
-            viewModel.setImageView(image: characterViewModel.tableView ? "tablecells.fill" : "tablecells")
-            imageButton1.configure(viewModel: viewModel)
-            tabelView.isHidden = !characterViewModel.tableView
-            collectionView.isHidden = characterViewModel.tableView
-            characterViewModel.tableView ? tabelView.reloadData() : collectionView.reloadData()
+            displayViewOption(viewModel: viewModel)
         } else {
-            displayAlertSheet()
+            displaySortingAlertSheet()
         }
     }
-    
-    
 }

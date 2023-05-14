@@ -11,6 +11,10 @@ enum ButtonType {
     case changeView
     case sort
 }
+enum ViewOption {
+    case tableView
+    case collectionView
+}
 enum SortingOption {
     case ascending(imageString: String = "alphaAscending", image: UIImage = UIImage(named: "alphaAscending")!, text: String = "Alphabetical (A-Z)")
     case descending(imageString: String = "alphaDescending", image: UIImage = UIImage(named: "alphaDescending")!, text: String = "Alphabetical (Z-A)")
