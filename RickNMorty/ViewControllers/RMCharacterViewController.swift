@@ -158,10 +158,6 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
         cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        displayDetailVC(indexPath: indexPath)
-    }
 }
 extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
     func didLoadInitialCharacters() {
@@ -193,10 +189,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width/2, height: collectionView.bounds.width/2)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        displayDetailVC(indexPath: indexPath)
-    }
+
 }
 
 extension RMCharacterListViewController: UIScrollViewDelegate {

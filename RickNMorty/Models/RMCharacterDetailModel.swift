@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 class RMCharacterDetailModel {
     private let character: RMCharacter
     init(character: RMCharacter) {
@@ -16,6 +17,16 @@ class RMCharacterDetailModel {
     }
     public var characterStatusText: String {
         return character.status.text
+    }
+    public var characterStatusColor: UIColor {
+        switch(characterStatus){
+        case .unknown:
+            return .yellow
+        case .dead:
+            return .red
+        case .alive:
+            return .green
+        }
     }
     public var characterStatus: RMCharacterStatus{
         return character.status

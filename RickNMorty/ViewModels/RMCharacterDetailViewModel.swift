@@ -29,6 +29,7 @@ class RMCharacterDetailViewModel {
         anotherCustomView =  DetailedStackView()
         anotherCustomView.labelRightSide.text = characterModel.characterStatusText
         anotherCustomView.labelLeftSide.text = "Status"
+        anotherCustomView.gradientBoarderShadowView.backgroundColor = characterModel.characterStatusColor
         itemsInView.append(anotherCustomView)
         return itemsInView
     }

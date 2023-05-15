@@ -20,21 +20,11 @@ class RMCharacterDetailViewController : UIViewController {
               view.removeFromSuperview()
         }
         registerCells()
-    }
-    func registerCells(){
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "EpisodeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: EpisodeCollectionViewCell.cellIdentifier)
-    }
-    func configure(rmCharacterDetailViewModel: RMCharacterDetailViewModel){
-        self.rmCharacterDetailViewModel = rmCharacterDetailViewModel
-        self.rmCharacterDetailViewModel.fetchEpisodes()
         DispatchQueue.main.async {
             for view in self.rmCharacterDetailViewModel.createStackView() {
                 self.stackView.addArrangedSubview(view)
             }
         }
-       
         self.rmCharacterDetailViewModel.getCharacterModel().fetchImage { [weak self] result in
             switch result {
             case .success(let data):
@@ -49,6 +39,15 @@ class RMCharacterDetailViewController : UIViewController {
                 break
             }
         }
+    }
+    func registerCells(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "EpisodeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: EpisodeCollectionViewCell.cellIdentifier)
+    }
+    func configure(rmCharacterDetailViewModel: RMCharacterDetailViewModel){
+        self.rmCharacterDetailViewModel = rmCharacterDetailViewModel
+        self.rmCharacterDetailViewModel.fetchEpisodes()
         
     }
 }
