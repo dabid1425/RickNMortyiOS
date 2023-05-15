@@ -15,12 +15,17 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     var rmCharacter: RMCharacterViewCellModel!
     @IBOutlet var characterName: UILabel!
     @IBOutlet var characterImageView: CurvedLabelImageView!
+    public weak var delegate: RMCharacterItemSelectedDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         characterName.adjustsFontSizeToFitWidth = true
         background.startColor = .clear
         background.endColor = .clear
-        
+        background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:))))
+    }
+    
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        delegate?.didSelectItem(rmCharacter: rmCharacter.getCharacter())
     }
     override func prepareForReuse() {
         super.prepareForReuse()

@@ -6,12 +6,6 @@
 //
 
 import UIKit
-
-protocol RMCharacterItemSelectedDelegate: AnyObject {
-    func didLoadInitialCharacters()
-    
-}
-
 class CharacterTableViewCell: UITableViewCell {
     @IBOutlet var background: GradientBorderShadowView!
     static let cellIdentifier = "CharacterTableViewCell"
@@ -31,7 +25,12 @@ class CharacterTableViewCell: UITableViewCell {
         gender.adjustsFontSizeToFitWidth = true
         background.startColor = .clear
         background.endColor = .clear
-    }
+        background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:))))
+        }
+
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        delegate?.didSelectItem(rmCharacter: rmCharacter.getCharacter())
+        }
     override func prepareForReuse() {
         super.prepareForReuse()
         characterName.text = nil

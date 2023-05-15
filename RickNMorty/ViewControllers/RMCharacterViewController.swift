@@ -134,10 +134,10 @@ class RMCharacterListViewController: UIViewController {
         spinner.alpha = 0
         characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
     }
-    private func displayDetailVC(indexPath: IndexPath) {
+    private func displayDetailVC(rmCharacter: RMCharacter) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
         if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
-            let rmCharacterDetailViewModel = RMCharacterDetailViewModel(characterModel: RMCharacterDetailModel(character: characterViewModel.getCharacters()[indexPath.row]))
+            let rmCharacterDetailViewModel = RMCharacterDetailViewModel(characterModel: RMCharacterDetailModel(character: rmCharacter))
             charactersVC.configure(rmCharacterDetailViewModel: rmCharacterDetailViewModel)
             navigationController?.pushViewController(charactersVC, animated: true)
         }
@@ -156,6 +156,7 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
             fatalError("Unsupported cell")
         }
         cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
+        cell.delegate = self
         return cell
     }
 }
@@ -183,7 +184,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
             fatalError("Unsupported cell")
         }
         cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
-        
+        cell.delegate = self
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -223,5 +224,10 @@ extension RMCharacterListViewController: ImageButtonViewClicked{
         } else {
             displaySortingAlertSheet()
         }
+    }
+}
+extension RMCharacterListViewController: RMCharacterItemSelectedDelegate{
+    func didSelectItem(rmCharacter: RMCharacter) {
+        displayDetailVC(rmCharacter: rmCharacter)
     }
 }
