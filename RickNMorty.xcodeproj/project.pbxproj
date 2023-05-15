@@ -29,6 +29,8 @@
 		334DEC172A12D64600F27758 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334DEC142A12D64600F27758 /* CustomTextField.swift */; };
 		334DEC182A12D64600F27758 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334DEC152A12D64600F27758 /* BorderLabel.swift */; };
 		334DEC192A12D64600F27758 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334DEC162A12D64600F27758 /* LabeledTextField.swift */; };
+		334DEC1C2A12E3FB00F27758 /* CustomLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334DEC1B2A12E3FB00F27758 /* CustomLabelView.xib */; };
+		334DEC1E2A12E40A00F27758 /* CustomLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334DEC1D2A12E40A00F27758 /* CustomLabelView.swift */; };
 		3350930F2A0EDC6900601704 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3350930E2A0EDC6900601704 /* CircularImageView.swift */; };
 		335093172A0EFFFC00601704 /* ImageButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335093162A0EFFFC00601704 /* ImageButtonView.xib */; };
 		335093192A0F051200601704 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335093182A0F051200601704 /* ImageButtonView.swift */; };
@@ -123,6 +125,8 @@
 		334DEC142A12D64600F27758 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		334DEC152A12D64600F27758 /* BorderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
 		334DEC162A12D64600F27758 /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		334DEC1B2A12E3FB00F27758 /* CustomLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLabelView.xib; sourceTree = "<group>"; };
+		334DEC1D2A12E40A00F27758 /* CustomLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelView.swift; sourceTree = "<group>"; };
 		3350930E2A0EDC6900601704 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		335093162A0EFFFC00601704 /* ImageButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageButtonView.xib; sourceTree = "<group>"; };
 		335093182A0F051200601704 /* ImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonView.swift; sourceTree = "<group>"; };
@@ -307,6 +311,15 @@
 			path = TextFieldView;
 			sourceTree = "<group>";
 		};
+		334DEC1A2A12E3DC00F27758 /* CustomUILabel */ = {
+			isa = PBXGroup;
+			children = (
+				334DEC1B2A12E3FB00F27758 /* CustomLabelView.xib */,
+				334DEC1D2A12E40A00F27758 /* CustomLabelView.swift */,
+			);
+			path = CustomUILabel;
+			sourceTree = "<group>";
+		};
 		336F26F82A0BE1BF003EF2C7 = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +391,7 @@
 		339E094F2A0BF4B20049956E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				334DEC1A2A12E3DC00F27758 /* CustomUILabel */,
 				334DEC0B2A12CB3A00F27758 /* TextFieldView */,
 				338F46872A11A6A00010E2F4 /* DetailedStackView */,
 				3342E70B2A11436600B191D9 /* ImageButtonView */,
@@ -653,6 +667,7 @@
 				332D83912A0ED8560091D1CB /* CharacterCollectionViewCell.xib in Resources */,
 				336F27112A0BE1C0003EF2C7 /* LaunchScreen.storyboard in Resources */,
 				3342E70E2A1162EA00B191D9 /* RMEpisodeVC.storyboard in Resources */,
+				334DEC1C2A12E3FB00F27758 /* CustomLabelView.xib in Resources */,
 				338F468B2A11A6CE0010E2F4 /* DetailedStackView.xib in Resources */,
 				336F270E2A0BE1C0003EF2C7 /* Assets.xcassets in Resources */,
 				339E09672A0BFF320049956E /* CharacterTableViewCell.xib in Resources */,
@@ -795,6 +810,7 @@
 				339E09662A0BFF320049956E /* CharacterTableViewCell.swift in Sources */,
 				339E09932A0C0EFF0049956E /* RMCharacterViewModel.swift in Sources */,
 				330A6F2D2A0FE0620025CD7A /* ImageButtonModel.swift in Sources */,
+				334DEC1E2A12E40A00F27758 /* CustomLabelView.swift in Sources */,
 				335093212A0F1AB000601704 /* RMCharacterViewCellModel.swift in Sources */,
 				334DEC042A12B93F00F27758 /* CharacterModelDelegate.swift in Sources */,
 				339E098F2A0C006E0049956E /* RMGetLocationsResponse.swift in Sources */,
