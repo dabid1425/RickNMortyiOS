@@ -31,6 +31,7 @@ class RMCharacterListViewController: UIViewController {
         imageButton1.delegate = self
         imageButton2.delegate = self
         setImageButtons()
+        searchView.delegate = self
     }
     
     private func setImageButtons(){
@@ -145,7 +146,7 @@ class RMCharacterListViewController: UIViewController {
 }
 extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characterViewModel.getCharactersCellViewModel().count
+        return characterViewModel.filteredSearch ? characterViewModel.getFilteredCharactersCellViewModel().count : characterViewModel.getCharactersCellViewModel().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -155,7 +156,7 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
         ) as? CharacterTableViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
+        cell.configure(rmCharacter: characterViewModel.filteredSearch ? characterViewModel.getFilteredCharactersCellViewModel()[indexPath.row]:  characterViewModel.getCharactersCellViewModel()[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -173,7 +174,7 @@ extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
 
 extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characterViewModel.getCharactersCellViewModel().count
+        return characterViewModel.filteredSearch ? characterViewModel.getFilteredCharactersCellViewModel().count : characterViewModel.getCharactersCellViewModel().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -183,7 +184,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         ) as? CharacterCollectionViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
+        cell.configure(rmCharacter: characterViewModel.filteredSearch ? characterViewModel.getFilteredCharactersCellViewModel()[indexPath.row]:  characterViewModel.getCharactersCellViewModel()[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -229,5 +230,12 @@ extension RMCharacterListViewController: ImageButtonViewClicked{
 extension RMCharacterListViewController: RMCharacterItemSelectedDelegate{
     func didSelectItem(rmCharacter: RMCharacter) {
         displayDetailVC(rmCharacter: rmCharacter)
+    }
+}
+extension RMCharacterListViewController: SearchTextDelegate{
+    func textChanged(searchText: String) {
+        characterViewModel.filteredSearch = !searchText.isEmpty
+        characterViewModel.searchList(searchText: searchText)
+        characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
     }
 }

@@ -24,6 +24,7 @@ class RMCharacterViewModel {
     public var apiInfo: RMGetAllCharactersResponse.Info? = nil
     public weak var delegate: RMCharacterListViewViewModelDelegate?
     var tableView = true
+    var filteredSearch = false
     public var isLoadingMoreCharacters = false
     var sortType: SortingOption!
     private var characters: [RMCharacter] = [] {
@@ -36,11 +37,16 @@ class RMCharacterViewModel {
             }
         }
     }
-
+    public func searchList(searchText: String){
+        filteredCellViewModelList = cellViewModelList.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+    }
     private var cellViewModelList: [RMCharacterViewCellModel] = []
-    //need to change to a TableCellViewModel and a CollectionCellViewModel list that fetches the image inside the VM
+    private var filteredCellViewModelList: [RMCharacterViewCellModel] = []
     public func getCharactersCellViewModel() -> [RMCharacterViewCellModel]{
         return cellViewModelList
+    }
+    public func getFilteredCharactersCellViewModel() -> [RMCharacterViewCellModel]{
+        return filteredCellViewModelList
     }
     public func getCharacters() -> [RMCharacter]{
         return characters

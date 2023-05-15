@@ -7,9 +7,13 @@
 
 import Foundation
 import UIKit
+protocol SearchTextDelegate: AnyObject {
+    func textChanged(searchText: String)
+}
 class SearchView : UIView{
     
     @IBOutlet var searchBar: UISearchBar!
+    var delegate: SearchTextDelegate!
     override init(frame: CGRect) {
            super.init(frame: frame)
            setupView()
@@ -36,6 +40,6 @@ class SearchView : UIView{
 }
 extension SearchView :  UISearchBarDelegate, UISearchDisplayDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("searchText",searchText)
+        delegate?.textChanged(searchText: searchText)
     }
 }
