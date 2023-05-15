@@ -137,14 +137,15 @@ class RMCharacterListViewController: UIViewController {
     private func displayDetailVC(indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RMCharacterDetailVC", bundle:nil)
         if let charactersVC = storyBoard.instantiateViewController(withIdentifier: "RMCharacterDetailViewController") as? RMCharacterDetailViewController {
-            
+            let rmCharacterDetailViewModel = RMCharacterDetailViewModel(characterModel: RMCharacterDetailModel(character: characterViewModel.getCharacters()[indexPath.row]))
+            charactersVC.configure(rmCharacterDetailViewModel: rmCharacterDetailViewModel)
             navigationController?.pushViewController(charactersVC, animated: true)
         }
     }
 }
 extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characterViewModel.getCharacters().count
+        return characterViewModel.getCharactersCellViewModel().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -154,7 +155,7 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
         ) as? CharacterTableViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
+        cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
         return cell
     }
     
@@ -175,7 +176,7 @@ extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
 
 extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characterViewModel.getCharacters().count
+        return characterViewModel.getCharactersCellViewModel().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -185,7 +186,7 @@ extension RMCharacterListViewController: UICollectionViewDelegate, UICollectionV
         ) as? CharacterCollectionViewCell else {
             fatalError("Unsupported cell")
         }
-        cell.configure(rmCharacter: characterViewModel.getCharacters()[indexPath.row])
+        cell.configure(rmCharacter: characterViewModel.getCharactersCellViewModel()[indexPath.row])
         
         return cell
     }
@@ -202,7 +203,7 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard characterViewModel.shouldShowLoadMoreIndicator,
               !characterViewModel.isLoadingMoreCharacters,
-              !characterViewModel.getCharacters().isEmpty,
+              !characterViewModel.getCharactersCellViewModel().isEmpty,
               let nextUrlString = characterViewModel.apiInfo?.next,
               let url = URL(string: nextUrlString) else {
             return

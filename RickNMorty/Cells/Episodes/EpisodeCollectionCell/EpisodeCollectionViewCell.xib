@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EpisodeCollectionViewCell" id="gTV-IL-0wX" customClass="EpisodeCollectionViewCell" customModule="RickNMorty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="147"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="147"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqJ-1K-FFz">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="147"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-Ti-lRB" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="147"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Fy-WP-d59">
+                                        <rect key="frame" x="10" y="10" width="370" height="127"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIO-h3-Vgw">
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="42.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season Episode Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-sW-oPT">
+                                                <rect key="frame" x="0.0" y="42.333333333333329" width="370" height="42.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aired Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqN-de-UWR">
+                                                <rect key="frame" x="0.0" y="84.666666666666671" width="370" height="42.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2Fy-WP-d59" firstAttribute="top" secondItem="UAM-Ti-lRB" secondAttribute="top" constant="10" id="0Xd-sV-mDH"/>
+                                    <constraint firstItem="2Fy-WP-d59" firstAttribute="leading" secondItem="UAM-Ti-lRB" secondAttribute="leading" constant="10" id="1lq-3H-qwI"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Fy-WP-d59" secondAttribute="trailing" constant="10" id="Lr6-6l-5zf"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Fy-WP-d59" secondAttribute="bottom" constant="10" id="oxb-Ye-BfS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UAM-Ti-lRB" firstAttribute="leading" secondItem="QqJ-1K-FFz" secondAttribute="leading" id="GsT-eN-6nq"/>
+                            <constraint firstItem="UAM-Ti-lRB" firstAttribute="top" secondItem="QqJ-1K-FFz" secondAttribute="top" id="Odf-xk-kLO"/>
+                            <constraint firstAttribute="bottom" secondItem="UAM-Ti-lRB" secondAttribute="bottom" id="kAp-tF-ZB6"/>
+                            <constraint firstAttribute="trailing" secondItem="UAM-Ti-lRB" secondAttribute="trailing" id="wLP-H8-vbH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QqJ-1K-FFz" secondAttribute="trailing" id="5FN-Wg-pDH"/>
+                <constraint firstItem="QqJ-1K-FFz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ECi-Ut-OFH"/>
+                <constraint firstItem="QqJ-1K-FFz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cfW-Xe-Oog"/>
+                <constraint firstAttribute="bottom" secondItem="QqJ-1K-FFz" secondAttribute="bottom" id="hXj-1q-VOs"/>
+            </constraints>
+            <size key="customSize" width="390" height="147"/>
+            <connections>
+                <outlet property="airDate" destination="GqN-de-UWR" id="rHZ-de-pIC"/>
+                <outlet property="episodeName" destination="TIO-h3-Vgw" id="RQY-Ta-JR4"/>
+                <outlet property="seasonNumber" destination="mkV-sW-oPT" id="5gL-ng-Eth"/>
+            </connections>
+            <point key="canvasLocation" x="398.47328244274809" y="53.87323943661972"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -39,9 +39,13 @@ class RMCharacterViewModel {
 
     private var cellViewModelList: [RMCharacterViewCellModel] = []
     //need to change to a TableCellViewModel and a CollectionCellViewModel list that fetches the image inside the VM
-    public func getCharacters() -> [RMCharacterViewCellModel]{
+    public func getCharactersCellViewModel() -> [RMCharacterViewCellModel]{
         return cellViewModelList
     }
+    public func getCharacters() -> [RMCharacter]{
+        return characters
+    }
+    
     func sortData() {
         switch sortType {
         case .ascending:
