@@ -81,6 +81,7 @@
             <size key="customSize" width="390" height="147"/>
             <connections>
                 <outlet property="airDate" destination="GqN-de-UWR" id="rHZ-de-pIC"/>
+                <outlet property="background" destination="UAM-Ti-lRB" id="2fu-gF-v1K"/>
                 <outlet property="episodeName" destination="TIO-h3-Vgw" id="RQY-Ta-JR4"/>
                 <outlet property="seasonNumber" destination="mkV-sW-oPT" id="5gL-ng-Eth"/>
             </connections>

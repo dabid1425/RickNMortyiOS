@@ -84,6 +84,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="background" destination="6TM-9X-p2l" id="gra-ua-nZl"/>
                 <outlet property="dimensionLabel" destination="hgl-Ox-7M4" id="3YL-jk-kNU"/>
                 <outlet property="locationName" destination="A7c-JK-H58" id="Yw7-gc-iaP"/>
                 <outlet property="typeName" destination="2Nd-tB-Xnj" id="wlI-VL-qUC"/>
