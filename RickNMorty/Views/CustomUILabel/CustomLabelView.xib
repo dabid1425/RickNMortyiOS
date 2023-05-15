@@ -28,8 +28,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qb8-M3-E0e" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="221" height="51"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y50-kk-cQ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="221" height="51"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomLabelView" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y50-kk-cQ3">
+                                            <rect key="frame" x="10" y="0.0" width="201" height="51"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -38,9 +38,9 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="Y50-kk-cQ3" firstAttribute="leading" secondItem="Qb8-M3-E0e" secondAttribute="leading" id="4nF-is-wRv"/>
+                                        <constraint firstItem="Y50-kk-cQ3" firstAttribute="leading" secondItem="Qb8-M3-E0e" secondAttribute="leading" constant="10" id="4nF-is-wRv"/>
                                         <constraint firstItem="Y50-kk-cQ3" firstAttribute="top" secondItem="Qb8-M3-E0e" secondAttribute="top" id="92g-bh-sbj"/>
-                                        <constraint firstAttribute="trailing" secondItem="Y50-kk-cQ3" secondAttribute="trailing" id="XAg-o7-F1b"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y50-kk-cQ3" secondAttribute="trailing" constant="10" id="XAg-o7-F1b"/>
                                         <constraint firstAttribute="bottom" secondItem="Y50-kk-cQ3" secondAttribute="bottom" id="re7-K0-zjp"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
