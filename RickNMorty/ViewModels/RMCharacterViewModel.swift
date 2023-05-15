@@ -50,14 +50,19 @@ class RMCharacterViewModel {
         switch sortType {
         case .ascending:
             cellViewModelList.sort { $0.name < $1.name }
+            characters.sort { $0.name < $1.name }
         case .descending:
             cellViewModelList.sort { $0.name > $1.name }
+            characters.sort { $0.name > $1.name }
         case .alive:
             cellViewModelList.sort { $0.characterStatusText == "Alive" && $1.characterStatusText != "Alive" }
+            characters.sort { $0.status.rawValue == "Alive" && $1.status.rawValue != "Alive" }
         case .dead:
             cellViewModelList.sort { $0.characterStatusText == "Dead" && $1.characterStatusText != "Dead" }
+            characters.sort { $0.status.rawValue == "Dead" && $1.status.rawValue != "Dead" }
         case .unknown:
             cellViewModelList.sort { $0.characterStatusText == "Unknown" && $1.characterStatusText != "Unknown" }
+            characters.sort { $0.status.rawValue == "unknown" && $1.status.rawValue != "unknown" }
         case .none:
             break
         }

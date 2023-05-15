@@ -29,6 +29,27 @@ class RMCharacterDetailViewController : UIViewController {
     func configure(rmCharacterDetailViewModel: RMCharacterDetailViewModel){
         self.rmCharacterDetailViewModel = rmCharacterDetailViewModel
         self.rmCharacterDetailViewModel.fetchEpisodes()
+        DispatchQueue.main.async {
+            for view in self.rmCharacterDetailViewModel.createStackView() {
+                self.stackView.addArrangedSubview(view)
+            }
+        }
+       
+        self.rmCharacterDetailViewModel.getCharacterModel().fetchImage { [weak self] result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self?.spinner.stopAnimating()
+                    self?.spinner.alpha = 0
+                    let image = UIImage(data: data)
+                    self?.characterImageView.image = image
+                }
+            case .failure(let error):
+                print(String(describing: error))
+                break
+            }
+        }
+        
     }
 }
 extension RMCharacterDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {

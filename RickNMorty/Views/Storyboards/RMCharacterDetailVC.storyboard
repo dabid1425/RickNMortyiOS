@@ -36,6 +36,12 @@
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="280" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rTj-iK-dfN">
                                                 <rect key="frame" x="20" y="220" width="280" height="280"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="26o-kk-li8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ha2-cJ-jSx"/>
                                                 </constraints>

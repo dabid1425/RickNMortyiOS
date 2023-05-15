@@ -25,7 +25,7 @@ class DetailedStackView : UIView {
        
        private func setupView() {
            let bundle = Bundle(for: type(of: self))
-           let nib = UINib(nibName: "DetailStackView", bundle: bundle)
+           let nib = UINib(nibName: "DetailedStackView", bundle: bundle)
            let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
            addSubview(view)
            view.frame = bounds
