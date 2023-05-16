@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController storyboardIdentifier="RMCharacterListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RMCharacterListViewController" customModule="RickNMorty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-Fx-kFQ" customClass="GradientBorderShadowView" customModule="RickNMorty" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cBn-hd-K9U">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-Q6-SpD">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-Ia-OAA" customClass="SearchView" customModule="RickNMorty" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="140" height="30"/>
+                                                        <rect key="frame" x="10" y="10" width="167.5" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -39,54 +39,60 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3xn-mA-Zfx">
-                                                <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ej-Bf-Lnh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj4-Jd-LaA" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dI-y8-1Jy" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="6.5" y="0.0" width="50" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="TfF-8z-Zj5"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="Tgd-tM-2l6"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="Dj4-Jd-LaA" firstAttribute="top" secondItem="7ej-Bf-Lnh" secondAttribute="top" id="2EW-FF-e6R"/>
-                                                            <constraint firstItem="Dj4-Jd-LaA" firstAttribute="leading" secondItem="7ej-Bf-Lnh" secondAttribute="leading" id="499-oH-6Yb"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Dj4-Jd-LaA" secondAttribute="bottom" id="FBn-ds-Rsv"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Dj4-Jd-LaA" secondAttribute="trailing" id="rtY-bK-uGE"/>
+                                                            <constraint firstItem="7dI-y8-1Jy" firstAttribute="centerY" secondItem="7ej-Bf-Lnh" secondAttribute="centerY" id="uzt-RI-f4a"/>
+                                                            <constraint firstItem="7dI-y8-1Jy" firstAttribute="centerX" secondItem="7ej-Bf-Lnh" secondAttribute="centerX" id="xaC-4J-KiA"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thf-WH-xvg">
-                                                        <rect key="frame" x="53.5" y="0.0" width="53" height="50"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMK-2u-7Ew">
+                                                        <rect key="frame" x="62.5" y="0.0" width="62.5" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJb-jq-J8Y" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4s-5s-ems" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="6.5" y="0.0" width="50" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="c1u-lE-RCX"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="t6A-Kt-p7X"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="mJb-jq-J8Y" secondAttribute="trailing" id="QES-nB-BYa"/>
-                                                            <constraint firstItem="mJb-jq-J8Y" firstAttribute="leading" secondItem="thf-WH-xvg" secondAttribute="leading" id="TnR-A9-YnM"/>
-                                                            <constraint firstAttribute="bottom" secondItem="mJb-jq-J8Y" secondAttribute="bottom" id="ewY-7y-JcW"/>
-                                                            <constraint firstItem="mJb-jq-J8Y" firstAttribute="top" secondItem="thf-WH-xvg" secondAttribute="top" id="fvp-Kc-fnm"/>
+                                                            <constraint firstItem="o4s-5s-ems" firstAttribute="centerY" secondItem="DMK-2u-7Ew" secondAttribute="centerY" id="AOm-7Y-sKZ"/>
+                                                            <constraint firstItem="o4s-5s-ems" firstAttribute="centerX" secondItem="DMK-2u-7Ew" secondAttribute="centerX" id="ccd-wG-HYI"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utp-Xt-iqs">
-                                                        <rect key="frame" x="106.5" y="0.0" width="53.5" height="50"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOh-Xs-qr3">
+                                                        <rect key="frame" x="125" y="0.0" width="62.5" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrK-2P-ZBt" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-XP-CwG" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="6.5" y="0.0" width="50" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="2aq-kZ-fG0"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="hgs-sk-O1I"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="HrK-2P-ZBt" secondAttribute="bottom" id="KcR-UR-IDu"/>
-                                                            <constraint firstAttribute="trailing" secondItem="HrK-2P-ZBt" secondAttribute="trailing" id="gYt-6B-1Dq"/>
-                                                            <constraint firstItem="HrK-2P-ZBt" firstAttribute="leading" secondItem="utp-Xt-iqs" secondAttribute="leading" id="tGl-Pj-sDl"/>
-                                                            <constraint firstItem="HrK-2P-ZBt" firstAttribute="top" secondItem="utp-Xt-iqs" secondAttribute="top" id="tZa-co-Ifv"/>
+                                                            <constraint firstItem="KXp-XP-CwG" firstAttribute="centerX" secondItem="HOh-Xs-qr3" secondAttribute="centerX" id="2TU-cV-5db"/>
+                                                            <constraint firstItem="KXp-XP-CwG" firstAttribute="centerY" secondItem="HOh-Xs-qr3" secondAttribute="centerY" id="ldm-62-AkL"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -104,7 +110,7 @@
                                 </constraints>
                             </view>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-5p-LPr">
-                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sin-dU-btA">
                                     <size key="itemSize" width="0.0" height="128"/>
@@ -115,17 +121,17 @@
                                 <cells/>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Xy-Ng-0ZJ">
-                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTb-L5-7x5">
-                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHM-6W-fVz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="280" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-h6-CRT">
-                                                <rect key="frame" x="20" y="0.0" width="280" height="280"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="280"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="25g-sF-PGT"/>
                                                 </constraints>
@@ -155,7 +161,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="YXm-t4-pkH"/>
                             </scrollView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="FDM-xj-D9z">
-                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4vq-yN-AYa"/>
@@ -188,9 +194,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Svs-5p-LPr" id="cj1-db-4Ox"/>
-                        <outlet property="imageButton1" destination="Dj4-Jd-LaA" id="4WE-3e-0cd"/>
-                        <outlet property="imageButton2" destination="mJb-jq-J8Y" id="1CX-Nd-Z1m"/>
-                        <outlet property="imageButton3" destination="HrK-2P-ZBt" id="mjy-m1-Xod"/>
+                        <outlet property="imageButton1" destination="7dI-y8-1Jy" id="FaK-FE-CBU"/>
+                        <outlet property="imageButton2" destination="o4s-5s-ems" id="13M-Wu-a8G"/>
+                        <outlet property="imageButton3" destination="KXp-XP-CwG" id="BF2-I9-8Rq"/>
                         <outlet property="searchView" destination="0qk-Ia-OAA" id="e76-EB-2rI"/>
                         <outlet property="spinner" destination="FDM-xj-D9z" id="EIS-t0-VQT"/>
                         <outlet property="tableView" destination="1Xy-Ng-0ZJ" id="dHN-lM-Gp5"/>
