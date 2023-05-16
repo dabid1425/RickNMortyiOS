@@ -16,20 +16,24 @@ class RMCharacterDetailViewModel {
     public func createStackView() -> [UIView] {
         var itemsInView = [UIView]()
         var anotherCustomView =  DetailedStackView()
-        anotherCustomView.labelRightSide.text = characterModel.name
-        anotherCustomView.labelLeftSide.text = "Name"
+        let detailModel = DetailStackViewModel()
+        detailModel.rightSide = characterModel.name
+        detailModel.leftSide = "Name"
+        anotherCustomView.viewModel = detailModel
 
         itemsInView.append(anotherCustomView)
         
         anotherCustomView =  DetailedStackView()
-        anotherCustomView.labelRightSide.text = characterModel.gender
-        anotherCustomView.labelLeftSide.text = "Gender"
+        detailModel.rightSide = characterModel.gender
+        detailModel.leftSide = "Gender"
+        anotherCustomView.viewModel = detailModel
         itemsInView.append(anotherCustomView)
         
         anotherCustomView =  DetailedStackView()
-        anotherCustomView.labelRightSide.text = characterModel.characterStatusText
-        anotherCustomView.labelLeftSide.text = "Status"
+        detailModel.rightSide = characterModel.characterStatusText
+        detailModel.leftSide = "Status"
         anotherCustomView.gradientBoarderShadowView.backgroundColor = characterModel.characterStatusColor
+        anotherCustomView.viewModel = detailModel
         itemsInView.append(anotherCustomView)
         return itemsInView
     }

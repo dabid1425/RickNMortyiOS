@@ -41,52 +41,52 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3xn-mA-Zfx">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="50"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPF-SM-kEi">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ej-Bf-Lnh">
                                                         <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a65-52-mdv" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="33.5" height="30"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj4-Jd-LaA" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="a65-52-mdv" secondAttribute="bottom" constant="10" id="42Q-GS-o4y"/>
-                                                            <constraint firstAttribute="trailing" secondItem="a65-52-mdv" secondAttribute="trailing" constant="10" id="GKK-Ec-9KK"/>
-                                                            <constraint firstItem="a65-52-mdv" firstAttribute="top" secondItem="jPF-SM-kEi" secondAttribute="top" constant="10" id="Yfr-3a-7pd"/>
-                                                            <constraint firstItem="a65-52-mdv" firstAttribute="leading" secondItem="jPF-SM-kEi" secondAttribute="leading" constant="10" id="vJ3-NI-hBf"/>
+                                                            <constraint firstItem="Dj4-Jd-LaA" firstAttribute="top" secondItem="7ej-Bf-Lnh" secondAttribute="top" id="2EW-FF-e6R"/>
+                                                            <constraint firstItem="Dj4-Jd-LaA" firstAttribute="leading" secondItem="7ej-Bf-Lnh" secondAttribute="leading" id="499-oH-6Yb"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Dj4-Jd-LaA" secondAttribute="bottom" id="FBn-ds-Rsv"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Dj4-Jd-LaA" secondAttribute="trailing" id="rtY-bK-uGE"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-aP-gWO">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thf-WH-xvg">
                                                         <rect key="frame" x="53.5" y="0.0" width="53" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjN-IY-22G" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="33" height="30"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJb-jq-J8Y" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="sjN-IY-22G" secondAttribute="trailing" constant="10" id="CZE-UF-N7w"/>
-                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="top" secondItem="Rv9-aP-gWO" secondAttribute="top" constant="10" id="SpO-9T-xeK"/>
-                                                            <constraint firstItem="sjN-IY-22G" firstAttribute="leading" secondItem="Rv9-aP-gWO" secondAttribute="leading" constant="10" id="Xnm-ki-k9z"/>
-                                                            <constraint firstAttribute="bottom" secondItem="sjN-IY-22G" secondAttribute="bottom" constant="10" id="YzM-PD-A2p"/>
+                                                            <constraint firstAttribute="trailing" secondItem="mJb-jq-J8Y" secondAttribute="trailing" id="QES-nB-BYa"/>
+                                                            <constraint firstItem="mJb-jq-J8Y" firstAttribute="leading" secondItem="thf-WH-xvg" secondAttribute="leading" id="TnR-A9-YnM"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mJb-jq-J8Y" secondAttribute="bottom" id="ewY-7y-JcW"/>
+                                                            <constraint firstItem="mJb-jq-J8Y" firstAttribute="top" secondItem="thf-WH-xvg" secondAttribute="top" id="fvp-Kc-fnm"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xR-WC-A8l">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utp-Xt-iqs">
                                                         <rect key="frame" x="106.5" y="0.0" width="53.5" height="50"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Vo-XX6" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="33.5" height="30"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrK-2P-ZBt" customClass="ImageButtonView" customModule="RickNMorty" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="top" secondItem="8xR-WC-A8l" secondAttribute="top" constant="10" id="6aR-sG-y1a"/>
-                                                            <constraint firstAttribute="trailing" secondItem="MXV-Vo-XX6" secondAttribute="trailing" constant="10" id="LNl-gB-h2s"/>
-                                                            <constraint firstAttribute="bottom" secondItem="MXV-Vo-XX6" secondAttribute="bottom" constant="10" id="SUx-HB-The"/>
-                                                            <constraint firstItem="MXV-Vo-XX6" firstAttribute="leading" secondItem="8xR-WC-A8l" secondAttribute="leading" constant="10" id="TcF-lb-1Jv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="HrK-2P-ZBt" secondAttribute="bottom" id="KcR-UR-IDu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="HrK-2P-ZBt" secondAttribute="trailing" id="gYt-6B-1Dq"/>
+                                                            <constraint firstItem="HrK-2P-ZBt" firstAttribute="leading" secondItem="utp-Xt-iqs" secondAttribute="leading" id="tGl-Pj-sDl"/>
+                                                            <constraint firstItem="HrK-2P-ZBt" firstAttribute="top" secondItem="utp-Xt-iqs" secondAttribute="top" id="tZa-co-Ifv"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -188,9 +188,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Svs-5p-LPr" id="cj1-db-4Ox"/>
-                        <outlet property="imageButton1" destination="a65-52-mdv" id="1fs-qp-Hw6"/>
-                        <outlet property="imageButton2" destination="sjN-IY-22G" id="EfU-yN-XQX"/>
-                        <outlet property="imageButton3" destination="MXV-Vo-XX6" id="bem-hq-MW2"/>
+                        <outlet property="imageButton1" destination="Dj4-Jd-LaA" id="4WE-3e-0cd"/>
+                        <outlet property="imageButton2" destination="mJb-jq-J8Y" id="1CX-Nd-Z1m"/>
+                        <outlet property="imageButton3" destination="HrK-2P-ZBt" id="mjy-m1-Xod"/>
                         <outlet property="searchView" destination="0qk-Ia-OAA" id="e76-EB-2rI"/>
                         <outlet property="spinner" destination="FDM-xj-D9z" id="EIS-t0-VQT"/>
                         <outlet property="tableView" destination="1Xy-Ng-0ZJ" id="dHN-lM-Gp5"/>
