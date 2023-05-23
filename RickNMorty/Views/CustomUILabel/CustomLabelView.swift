@@ -8,10 +8,19 @@
 import Foundation
 import UIKit
 class CustomLabelView: UIView{
-    
-    @IBOutlet var rightImage: UIView!
-    @IBOutlet var leftImage: UIView!
+
+    @IBOutlet var rightImageView: UIImageView!
+    @IBOutlet var leftImageView: UIImageView!
     @IBOutlet var horizontalStackView: UIStackView!
     @IBOutlet var label: UILabel!
     @IBOutlet var gradientView: GradientBorderShadowView!
+    var viewModel: CustomUILabelModel? {
+          didSet {
+              bindViewModel()
+          }
+      }
+    private func bindViewModel() {
+        guard let viewModel = viewModel else { return }
+        
+    }
 }

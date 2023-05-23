@@ -17,8 +17,7 @@ class RMCharacterListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-    var changeViewStyle = ImageButtonModel(image: "tablecells.fill", isRounded: true, isSystemNamed: true, buttonType: .changeView)
-    var changeSortStyle = ImageButtonModel(image: "filter", isRounded: true, isSystemNamed: false, buttonType: .sort)
+  
     private var characterViewModel = RMCharacterViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +31,14 @@ class RMCharacterListViewController: UIViewController {
         imageButton2.delegate = self
         setImageButtons()
         searchView.delegate = self
+        let searchViewModel = SearchButtonModel()
+        searchViewModel.placeHolderText = "Search by Character Name"
+        searchView.viewModel = searchViewModel
     }
     
     private func setImageButtons(){
-        imageButton1.configure(viewModel: changeViewStyle)
-        imageButton2.configure(viewModel: changeSortStyle)
+        imageButton1.configure(viewModel: characterViewModel.changeViewStyle)
+        imageButton2.configure(viewModel: characterViewModel.changeSortStyle)
     }
     
     private func registerCells() {
@@ -61,10 +63,10 @@ class RMCharacterListViewController: UIViewController {
     
     private func changeSortIcon(sortType: SortingOption) {
         self.characterViewModel.sortType = sortType
-        changeSortStyle.setImageView(image: sortType.imageString)
+        characterViewModel.changeSortStyle.setImageView(image: sortType.imageString)
         characterViewModel.sortData()
         characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
-        imageButton2.configure(viewModel: changeSortStyle)
+        imageButton2.configure(viewModel: characterViewModel.changeSortStyle)
         
     }
     

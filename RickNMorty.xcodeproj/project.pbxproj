@@ -41,6 +41,9 @@
 		335093272A0F2FB600601704 /* RMEpisodesViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335093262A0F2FB600601704 /* RMEpisodesViewCellModel.swift */; };
 		335093292A0F303F00601704 /* RMEpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335093282A0F303F00601704 /* RMEpisodesViewModel.swift */; };
 		3350932B2A0F304E00601704 /* RMLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3350932A2A0F304E00601704 /* RMLocationViewModel.swift */; };
+		336146052A1D2130002526E4 /* SearchButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336146042A1D2130002526E4 /* SearchButtonModel.swift */; };
+		336146072A1D2181002526E4 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336146062A1D2181002526E4 /* TextFieldModel.swift */; };
+		336146092A1D222E002526E4 /* CustomUILabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336146082A1D222E002526E4 /* CustomUILabelModel.swift */; };
 		336F27052A0BE1BF003EF2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F27042A0BE1BF003EF2C7 /* AppDelegate.swift */; };
 		336F27072A0BE1BF003EF2C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F27062A0BE1BF003EF2C7 /* SceneDelegate.swift */; };
 		336F270E2A0BE1C0003EF2C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F270D2A0BE1C0003EF2C7 /* Assets.xcassets */; };
@@ -137,6 +140,9 @@
 		335093262A0F2FB600601704 /* RMEpisodesViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodesViewCellModel.swift; sourceTree = "<group>"; };
 		335093282A0F303F00601704 /* RMEpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodesViewModel.swift; sourceTree = "<group>"; };
 		3350932A2A0F304E00601704 /* RMLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocationViewModel.swift; sourceTree = "<group>"; };
+		336146042A1D2130002526E4 /* SearchButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonModel.swift; sourceTree = "<group>"; };
+		336146062A1D2181002526E4 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
+		336146082A1D222E002526E4 /* CustomUILabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUILabelModel.swift; sourceTree = "<group>"; };
 		336F27012A0BE1BF003EF2C7 /* RickNMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickNMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336F27042A0BE1BF003EF2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		336F27062A0BE1BF003EF2C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -481,6 +487,9 @@
 				339E097B2A0C006E0049956E /* DataTypes */,
 				339E09832A0C006E0049956E /* APIResponseTypes */,
 				334A2E762A11CA3800DC6DCE /* RMCharacterDetailModel.swift */,
+				336146042A1D2130002526E4 /* SearchButtonModel.swift */,
+				336146062A1D2181002526E4 /* TextFieldModel.swift */,
+				336146082A1D222E002526E4 /* CustomUILabelModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -811,6 +820,7 @@
 				339E09932A0C0EFF0049956E /* RMCharacterViewModel.swift in Sources */,
 				330A6F2D2A0FE0620025CD7A /* ImageButtonModel.swift in Sources */,
 				334DEC1E2A12E40A00F27758 /* CustomLabelView.swift in Sources */,
+				336146052A1D2130002526E4 /* SearchButtonModel.swift in Sources */,
 				335093212A0F1AB000601704 /* RMCharacterViewCellModel.swift in Sources */,
 				334DEC042A12B93F00F27758 /* CharacterModelDelegate.swift in Sources */,
 				339E098F2A0C006E0049956E /* RMGetLocationsResponse.swift in Sources */,
@@ -836,6 +846,7 @@
 				339E098E2A0C006E0049956E /* RMGetAllCharactersResponse.swift in Sources */,
 				339E098D2A0C006E0049956E /* RMSingleLocation.swift in Sources */,
 				336F27072A0BE1BF003EF2C7 /* SceneDelegate.swift in Sources */,
+				336146092A1D222E002526E4 /* CustomUILabelModel.swift in Sources */,
 				334DEC172A12D64600F27758 /* CustomTextField.swift in Sources */,
 				339E098B2A0C006E0049956E /* RMEpisode.swift in Sources */,
 				339E09792A0C003A0049956E /* RMEndpoint.swift in Sources */,
@@ -852,6 +863,7 @@
 				3342E7142A1170BF00B191D9 /* EpisodesTableViewCell.swift in Sources */,
 				339E09782A0C003A0049956E /* RMRequest.swift in Sources */,
 				339E095D2A0BF9CE0049956E /* RMEpisodeListViewController.swift in Sources */,
+				336146072A1D2181002526E4 /* TextFieldModel.swift in Sources */,
 				334DEC192A12D64600F27758 /* LabeledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

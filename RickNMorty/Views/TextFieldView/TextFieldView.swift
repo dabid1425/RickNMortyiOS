@@ -10,6 +10,11 @@ import UIKit
 class TextFieldView : UIView , UITextFieldDelegate{
     @IBOutlet var customTextField: CustomTextField!
     @IBOutlet var textFieldLabel: UILabel!
+    var viewModel: TextFieldModel? {
+          didSet {
+              bindViewModel()
+          }
+      }
     override init(frame: CGRect) {
            super.init(frame: frame)
            setupView()
@@ -31,6 +36,10 @@ class TextFieldView : UIView , UITextFieldDelegate{
            customTextField.delegate = self
            customTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
        }
+    private func bindViewModel() {
+        guard let viewModel = viewModel else { return }
+        
+    }
     @objc private func textFieldDidChange(_ textField: UITextField) {
            // Handle text change event
            if let text = textField.text {

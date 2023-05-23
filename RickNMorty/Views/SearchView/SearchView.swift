@@ -14,6 +14,11 @@ class SearchView : UIView{
     
     @IBOutlet var searchBar: UISearchBar!
     var delegate: SearchTextDelegate!
+    var viewModel: SearchButtonModel? {
+          didSet {
+              bindViewModel()
+          }
+      }
     override init(frame: CGRect) {
            super.init(frame: frame)
            setupView()
@@ -33,10 +38,10 @@ class SearchView : UIView{
            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
            searchBar.delegate = self
        }
-    
-    
-    
-    
+    private func bindViewModel() {
+        guard let viewModel = viewModel else { return }
+        searchBar.placeholder = viewModel.placeHolderText
+    }
 }
 extension SearchView :  UISearchBarDelegate, UISearchDisplayDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
