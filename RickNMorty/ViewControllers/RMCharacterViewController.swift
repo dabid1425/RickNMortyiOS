@@ -37,8 +37,8 @@ class RMCharacterListViewController: UIViewController {
     }
     
     private func setImageButtons(){
-        imageButton1.viewModel = characterViewModel.changeSortStyle
-        imageButton1.viewModel = characterViewModel.changeSortStyle
+        imageButton1.viewModel = characterViewModel.changeViewStyle
+        imageButton2.viewModel = characterViewModel.changeSortStyle
 
     }
     
