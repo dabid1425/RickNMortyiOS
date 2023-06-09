@@ -39,7 +39,7 @@ class TextFieldView : UIView , UITextFieldDelegate{
            
        }
     private func bindViewModel() {
-        guard viewModel != nil else { return }
+        guard let viewModel = viewModel else { return }
         //set all gradientBorderShadowView and customTextField params to match viewModel values
     }
     @objc private func textFieldDidChange(_ textField: UITextField) {

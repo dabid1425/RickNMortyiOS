@@ -39,7 +39,7 @@ class CustomLabelView: UIView{
            
        }
     private func bindViewModel() {
-        guard viewModel != nil else { return }
+        guard let viewModel = viewModel else { return }
         // set rightImageView, leftImageView, horizontalStackView, label and gradientView to viewModel values
     }
 }

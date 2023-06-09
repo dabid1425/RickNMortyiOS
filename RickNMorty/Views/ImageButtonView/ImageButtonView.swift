@@ -40,8 +40,9 @@ class ImageButtonView : UIView{
            
        }
     private func bindViewModel() {
-        guard viewModel != nil else { return }
-        //set imageButton and gradientView params to viewModels values
+        guard let viewModel = viewModel else { return }
+        imageButton.image = viewModel.getIsSystemNamed() ? UIImage(systemName: viewModel.getImageString()) : UIImage(named: viewModel.getImageString())
+        gradientView.isCircle = viewModel.getIsRoundedBool()
     }
     @IBAction func itemClicked(_ sender: UIButton) {
         if let viewModel = viewModel {
