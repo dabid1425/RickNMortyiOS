@@ -36,10 +36,11 @@ class TextFieldView : UIView , UITextFieldDelegate{
            textFieldLabel.adjustsFontSizeToFitWidth = true
            customTextField.delegate = self
            customTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+           
        }
     private func bindViewModel() {
         guard viewModel != nil else { return }
-        
+        //set all gradientBorderShadowView and customTextField params to match viewModel values
     }
     @objc private func textFieldDidChange(_ textField: UITextField) {
            // Handle text change event

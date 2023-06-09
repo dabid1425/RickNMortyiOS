@@ -36,9 +36,10 @@ class CustomLabelView: UIView{
            addSubview(view)
            view.frame = bounds
            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+           
        }
     private func bindViewModel() {
-        guard let viewModel = viewModel else { return }
-        
+        guard viewModel != nil else { return }
+        // set rightImageView, leftImageView, horizontalStackView, label and gradientView to viewModel values
     }
 }

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 class TextFieldModel{
+    var label: String = ""
+    var catagoryLabel: String = ""
     var placeHolderText: String = ""
     var curveRadius: Int = 0
     var boarderWidth: Int = 0

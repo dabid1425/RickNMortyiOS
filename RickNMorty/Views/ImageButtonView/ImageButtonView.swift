@@ -15,7 +15,11 @@ class ImageButtonView : UIView{
     @IBOutlet var imageButton: CurvedLabelImageView!
     @IBOutlet var gradientView: GradientBorderShadowView!
     weak var delegate: ImageButtonViewClicked!
-    var viewModel: ImageButtonViewModel!
+    var viewModel: ImageButtonViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
     override init(frame: CGRect) {
            super.init(frame: frame)
            setupView()
@@ -33,13 +37,12 @@ class ImageButtonView : UIView{
            addSubview(view)
            view.frame = bounds
            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+           
        }
-    public func configure(viewModel: ImageButtonViewModel){
-        self.viewModel = viewModel
-        imageButton.image = viewModel.getIsSystemNamed() ? UIImage(systemName: viewModel.getImageString()) : UIImage(named: viewModel.getImageString())
-        gradientView.isCircle = viewModel.getIsRoundedBool()
+    private func bindViewModel() {
+        guard viewModel != nil else { return }
+        //set imageButton and gradientView params to viewModels values
     }
-    
     @IBAction func itemClicked(_ sender: UIButton) {
         if let viewModel = viewModel {
             delegate?.buttonClicked(viewModel: viewModel)

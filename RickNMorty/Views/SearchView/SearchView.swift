@@ -14,7 +14,7 @@ class SearchView : UIView{
     
     @IBOutlet var searchBar: UISearchBar!
     var delegate: SearchTextDelegate!
-    var viewModel: SearchButtonModel? {
+    var viewModel: SearchButtonViewModel? {
           didSet {
               bindViewModel()
           }
@@ -40,7 +40,7 @@ class SearchView : UIView{
        }
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
-        searchBar.placeholder = viewModel.placeHolderText
+        searchBar.placeholder = viewModel.getPlaceHolderText()
     }
 }
 extension SearchView :  UISearchBarDelegate, UISearchDisplayDelegate {

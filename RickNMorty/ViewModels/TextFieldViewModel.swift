@@ -12,6 +12,18 @@ class TextFieldViewModel {
     init(textFieldModel: TextFieldModel) {
            self.textFieldModel = textFieldModel
     }
+    func getCatagoryLabel() -> String{
+        return textFieldModel.catagoryLabel
+    }
+    func setCatagoryLabel(catagoryLabel: String){
+        textFieldModel.catagoryLabel = catagoryLabel
+    }
+    func getLabel() -> String{
+        return textFieldModel.label
+    }
+    func setLabel(label: String){
+        textFieldModel.label = label
+    }
     func getPlaceHolderText() -> String{
         return textFieldModel.placeHolderText
     }
