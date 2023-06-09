@@ -49,6 +49,7 @@
 		33686B352A337E2B0024F680 /* CustomUILabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686B342A337E2B0024F680 /* CustomUILabelViewModel.swift */; };
 		33686B372A3381450024F680 /* ImageButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686B362A3381450024F680 /* ImageButtonViewModel.swift */; };
 		33686B392A3389D90024F680 /* SearchButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686B382A3389D90024F680 /* SearchButtonViewModel.swift */; };
+		33686B3B2A33901C0024F680 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686B3A2A33901C0024F680 /* CustomActivityIndicator.swift */; };
 		336F27052A0BE1BF003EF2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F27042A0BE1BF003EF2C7 /* AppDelegate.swift */; };
 		336F27072A0BE1BF003EF2C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F27062A0BE1BF003EF2C7 /* SceneDelegate.swift */; };
 		336F270E2A0BE1C0003EF2C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336F270D2A0BE1C0003EF2C7 /* Assets.xcassets */; };
@@ -153,6 +154,7 @@
 		33686B342A337E2B0024F680 /* CustomUILabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUILabelViewModel.swift; sourceTree = "<group>"; };
 		33686B362A3381450024F680 /* ImageButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonViewModel.swift; sourceTree = "<group>"; };
 		33686B382A3389D90024F680 /* SearchButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonViewModel.swift; sourceTree = "<group>"; };
+		33686B3A2A33901C0024F680 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
 		336F27012A0BE1BF003EF2C7 /* RickNMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickNMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336F27042A0BE1BF003EF2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		336F27062A0BE1BF003EF2C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 				334DEC152A12D64600F27758 /* BorderLabel.swift */,
 				334DEC142A12D64600F27758 /* CustomTextField.swift */,
 				334DEC162A12D64600F27758 /* LabeledTextField.swift */,
+				33686B3A2A33901C0024F680 /* CustomActivityIndicator.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				33B16D592A0D773000516439 /* Extensions.swift in Sources */,
 				339E098C2A0C006E0049956E /* RMCharacterGender.swift in Sources */,
 				335093192A0F051200601704 /* ImageButtonView.swift in Sources */,
+				33686B3B2A33901C0024F680 /* CustomActivityIndicator.swift in Sources */,
 				335093272A0F2FB600601704 /* RMEpisodesViewCellModel.swift in Sources */,
 				334A2E772A11CA3800DC6DCE /* RMCharacterDetailModel.swift in Sources */,
 				338F46892A11A6C50010E2F4 /* DetailedStackView.swift in Sources */,

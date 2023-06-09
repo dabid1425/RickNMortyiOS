@@ -15,7 +15,8 @@ class RMCharacterListViewController: UIViewController {
     @IBOutlet var imageButton2: ImageButtonView!
     @IBOutlet var searchView: SearchView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    @IBOutlet var spinner: CustomActivityIndicator!
     @IBOutlet weak var tableView: UITableView!
   
     private var characterViewModel = RMCharacterViewModel()
