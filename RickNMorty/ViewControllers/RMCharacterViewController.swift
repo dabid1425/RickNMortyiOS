@@ -33,12 +33,13 @@ class RMCharacterListViewController: UIViewController {
         searchView.delegate = self
         let searchViewModel = SearchButtonModel()
         searchViewModel.placeHolderText = "Search by Character Name"
-        searchView.viewModel = searchViewModel
+        searchView.viewModel = SearchButtonViewModel(searchButtonModel: searchViewModel)
     }
     
     private func setImageButtons(){
-        imageButton1.configure(viewModel: characterViewModel.changeViewStyle)
-        imageButton2.configure(viewModel: characterViewModel.changeSortStyle)
+        imageButton1.viewModel = characterViewModel.changeSortStyle
+        imageButton1.viewModel = characterViewModel.changeSortStyle
+
     }
     
     private func registerCells() {
@@ -66,14 +67,14 @@ class RMCharacterListViewController: UIViewController {
         characterViewModel.changeSortStyle.setImageView(image: sortType.imageString)
         characterViewModel.sortData()
         characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
-        imageButton2.configure(viewModel: characterViewModel.changeSortStyle)
+        imageButton2.viewModel = characterViewModel.changeSortStyle
         
     }
     
     private func changeDisplayView(viewModel: ImageButtonViewModel, viewOption: ViewOption){
         characterViewModel.tableView = viewOption == .tableView
         viewModel.setImageView(image: characterViewModel.tableView ? "tablecells.fill" : "tablecells")
-        imageButton1.configure(viewModel: viewModel)
+        imageButton1.viewModel = viewModel
         tableView.isHidden = !characterViewModel.tableView
         collectionView.isHidden = characterViewModel.tableView
         characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
