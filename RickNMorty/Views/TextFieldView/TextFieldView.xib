@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="RickNMorty" customModuleProvider="target">
             <connections>
                 <outlet property="customTextField" destination="Rb4-nO-ilS" id="XD3-BX-Ff8"/>
+                <outlet property="gradientBorderShadowView" destination="kYT-Id-Vet" id="8na-3h-qAy"/>
                 <outlet property="textFieldLabel" destination="vQE-Ha-2SI" id="f6c-qy-p5v"/>
             </connections>
         </placeholder>

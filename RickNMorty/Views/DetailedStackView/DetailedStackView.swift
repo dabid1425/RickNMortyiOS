@@ -40,7 +40,7 @@ class DetailedStackView : UIView {
     }
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
-        labelLeftSide.text = viewModel.leftSide
-        labelRightSide.text = viewModel.rightSide
+        labelLeftSide.text = viewModel.getLeftSide()
+        labelRightSide.text = viewModel.getRightSide()
     }
 }

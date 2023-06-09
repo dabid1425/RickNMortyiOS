@@ -1,12 +1,12 @@
 //
-//  DetailStackViewModel.swift
+//  DetailStackModel.swift
 //  RickNMorty
 //
-//  Created by Dan Abid on 5/14/23.
+//  Created by Dan Abid on 6/9/23.
 //
 
 import Foundation
-class DetailStackViewModel {
+class DetailStackModel{
     var rightSide: String = ""
     var leftSide: String = ""
 }

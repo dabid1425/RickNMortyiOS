@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+enum StackViewDistribution {
+    case equally
+    case fill
+}
 enum ButtonType {
     case changeView
     case sort

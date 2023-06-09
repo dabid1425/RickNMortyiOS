@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 protocol ImageButtonViewClicked : AnyObject{
-    func buttonClicked(viewModel: ImageButtonModel)
+    func buttonClicked(viewModel: ImageButtonViewModel)
 }
 class ImageButtonView : UIView{
     @IBOutlet var button: UIButton!
     @IBOutlet var imageButton: CurvedLabelImageView!
     @IBOutlet var gradientView: GradientBorderShadowView!
     weak var delegate: ImageButtonViewClicked!
-    var viewModel: ImageButtonModel!
+    var viewModel: ImageButtonViewModel!
     override init(frame: CGRect) {
            super.init(frame: frame)
            setupView()
@@ -34,10 +34,10 @@ class ImageButtonView : UIView{
            view.frame = bounds
            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
        }
-    public func configure(viewModel: ImageButtonModel){
+    public func configure(viewModel: ImageButtonViewModel){
         self.viewModel = viewModel
-        imageButton.image = viewModel.isSystemNamedBool ? UIImage(systemName: viewModel.imageString) : UIImage(named: viewModel.imageString)
-        gradientView.isCircle = viewModel.isRoundedBool
+        imageButton.image = viewModel.getIsSystemNamed() ? UIImage(systemName: viewModel.getImageString()) : UIImage(named: viewModel.getImageString())
+        gradientView.isCircle = viewModel.getIsRoundedBool()
     }
     
     @IBAction func itemClicked(_ sender: UIButton) {

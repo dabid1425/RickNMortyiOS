@@ -14,7 +14,7 @@ class CustomLabelView: UIView{
     @IBOutlet var horizontalStackView: UIStackView!
     @IBOutlet var label: UILabel!
     @IBOutlet var gradientView: GradientBorderShadowView!
-    var viewModel: CustomUILabelModel? {
+    var viewModel: CustomUILabelViewModel? {
           didSet {
               bindViewModel()
           }

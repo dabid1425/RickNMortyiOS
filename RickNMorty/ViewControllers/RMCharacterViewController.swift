@@ -70,7 +70,7 @@ class RMCharacterListViewController: UIViewController {
         
     }
     
-    private func changeDisplayView(viewModel: ImageButtonModel, viewOption: ViewOption){
+    private func changeDisplayView(viewModel: ImageButtonViewModel, viewOption: ViewOption){
         characterViewModel.tableView = viewOption == .tableView
         viewModel.setImageView(image: characterViewModel.tableView ? "tablecells.fill" : "tablecells")
         imageButton1.configure(viewModel: viewModel)
@@ -79,7 +79,7 @@ class RMCharacterListViewController: UIViewController {
         characterViewModel.tableView ? tableView.reloadData() : collectionView.reloadData()
     }
     
-    private func displayViewOption(viewModel: ImageButtonModel){
+    private func displayViewOption(viewModel: ImageButtonViewModel){
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // Create your actions - take a look at different style attributes
@@ -221,8 +221,8 @@ extension RMCharacterListViewController: UIScrollViewDelegate {
 }
 
 extension RMCharacterListViewController: ImageButtonViewClicked{
-    func buttonClicked(viewModel: ImageButtonModel) {
-        if viewModel.buttonTypeEnum == .changeView {
+    func buttonClicked(viewModel: ImageButtonViewModel) {
+        if viewModel.getButtonType() == .changeView {
             displayViewOption(viewModel: viewModel)
         } else {
             displaySortingAlertSheet()

@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 class TextFieldView : UIView , UITextFieldDelegate{
+    @IBOutlet var gradientBorderShadowView: GradientBorderShadowView!
     @IBOutlet var customTextField: CustomTextField!
     @IBOutlet var textFieldLabel: UILabel!
-    var viewModel: TextFieldModel? {
+    var viewModel: TextFieldViewModel? {
           didSet {
               bindViewModel()
           }
@@ -37,7 +38,7 @@ class TextFieldView : UIView , UITextFieldDelegate{
            customTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
        }
     private func bindViewModel() {
-        guard let viewModel = viewModel else { return }
+        guard viewModel != nil else { return }
         
     }
     @objc private func textFieldDidChange(_ textField: UITextField) {

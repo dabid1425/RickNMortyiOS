@@ -27,8 +27,8 @@ class RMCharacterViewModel {
     var filteredSearch = false
     public var isLoadingMoreCharacters = false
     var sortType: SortingOption!
-    var changeViewStyle = ImageButtonModel(image: "tablecells.fill", isRounded: true, isSystemNamed: true, buttonType: .changeView)
-    var changeSortStyle = ImageButtonModel(image: "filter", isRounded: true, isSystemNamed: false, buttonType: .sort)
+    var changeViewStyle = ImageButtonViewModel(imageButtonModel: ImageButtonModel(image: "tablecells.fill", isRounded: true, isSystemNamed: true, buttonType: .changeView))
+        var changeSortStyle = ImageButtonViewModel(imageButtonModel: ImageButtonModel(image: "filter", isRounded: true, isSystemNamed: false, buttonType: .sort))
     private var characters: [RMCharacter] = [] {
         didSet {
             for character in characters {
