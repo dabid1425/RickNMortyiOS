@@ -48,11 +48,8 @@ extension RMEpisodeListViewController: UITableViewDelegate, UITableViewDataSourc
             fatalError("Unsupported cell")
         }
         cell.configure(episodeViewModel: episodeListViewModel.getCellViewModels()[indexPath.row])
+        cell.delegate = self
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
     }
 }
 
@@ -86,5 +83,11 @@ extension RMEpisodeListViewController: UIScrollViewDelegate {
             }
             t.invalidate()
         }
+    }
+}
+extension RMEpisodeListViewController : EpisodeModelDelegate {
+    func didSelectItem(rmEpisode: RMEpisode) {
+        // open episode detail vc 
+        print(rmEpisode)
     }
 }

@@ -40,6 +40,7 @@ extension RMLocationListViewController: UITableViewDelegate, UITableViewDataSour
             fatalError("Unsupported cell")
         }
         cell.configure(rmLocationCellModel: locationViewModel.getLocationCellModel()[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -73,5 +74,11 @@ extension RMLocationListViewController: UIScrollViewDelegate {
             }
             t.invalidate()
         }
+    }
+}
+extension RMLocationListViewController: LocationModelDelegate {
+    func didSelectItem(rmLocation: RMLocation) {
+        // open location detail vc 
+        print(rmLocation)
     }
 }

@@ -64,8 +64,15 @@ extension RMCharacterDetailViewController : UICollectionViewDelegate, UICollecti
             fatalError("Unsupported cell")
         }
         cell.configure(episodeViewModel: rmCharacterDetailViewModel.rmEpisodeViewCellModel[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
     
+}
+extension RMCharacterDetailViewController : EpisodeModelDelegate {
+    func didSelectItem(rmEpisode: RMEpisode) {
+        // open episode detail vc 
+        print(rmEpisode)
+    }
 }
