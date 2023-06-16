@@ -60,7 +60,7 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circularRadius" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="8"/>
+                                            <real key="value" value="2"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">

@@ -12,6 +12,9 @@ class RMCharacterDetailModel {
     init(character: RMCharacter) {
         self.character = character
     }
+    func getCharacter() -> RMCharacter {
+        return character
+    }
     public var name: String {
         return character.name
     }
@@ -46,12 +49,6 @@ class RMCharacterDetailModel {
     public func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
         if let url = URL(string: character.image) {
             RMImageLoader.shared.downloadImage(url, completion: completion)
-        }
-    }
-    public func fetchEpisode(episodeName: String, completion: @escaping (Result<RMEpisode, Error>) -> Void) {
-        if let episodeURL = URL(string: episodeName) {
-            let episodeModel = RMEpisodeViewModel(episodeDataUrl: episodeURL)
-            episodeModel.fetchEpisode(completion: completion)
         }
     }
 }

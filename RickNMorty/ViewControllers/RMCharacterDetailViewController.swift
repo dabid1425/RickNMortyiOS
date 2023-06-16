@@ -15,11 +15,14 @@ class RMCharacterDetailViewController : UIViewController {
     var rmCharacterDetailViewModel: RMCharacterDetailViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
+        setUp()
+    }
+    func setUp(){
         for view in self.stackView.arrangedSubviews{
               self.stackView.removeArrangedSubview(view)
               view.removeFromSuperview()
         }
-        registerCells()
         DispatchQueue.main.async {
             for view in self.rmCharacterDetailViewModel.createStackView() {
                 self.stackView.addArrangedSubview(view)
@@ -48,7 +51,6 @@ class RMCharacterDetailViewController : UIViewController {
     func configure(rmCharacterDetailViewModel: RMCharacterDetailViewModel){
         self.rmCharacterDetailViewModel = rmCharacterDetailViewModel
         self.rmCharacterDetailViewModel.fetchEpisodes()
-        
     }
 }
 extension RMCharacterDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {

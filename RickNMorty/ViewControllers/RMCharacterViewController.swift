@@ -19,7 +19,7 @@ class RMCharacterListViewController: UIViewController {
     @IBOutlet var spinner: CustomActivityIndicator!
     @IBOutlet weak var tableView: UITableView!
   
-    private var characterViewModel = RMCharacterViewModel()
+    private var characterViewModel = RMCharactersViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -165,7 +165,7 @@ extension RMCharacterListViewController: UITableViewDelegate, UITableViewDataSou
         return cell
     }
 }
-extension RMCharacterListViewController: RMCharacterListViewViewModelDelegate{
+extension RMCharacterListViewController: RMCharactersListViewViewModelDelegate{
     func didLoadInitialCharacters() {
         stopSpinner()
     }

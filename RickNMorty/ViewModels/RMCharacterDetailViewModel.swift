@@ -43,9 +43,17 @@ class RMCharacterDetailViewModel {
     public func getCharacterModel() -> RMCharacterDetailModel{
         return characterModel
     }
+    
+    public func fetchEpisode(episodeName: String, completion: @escaping (Result<RMEpisode, Error>) -> Void) {
+        if let episodeURL = URL(string: episodeName) {
+            let episodeModel = RMEpisodeViewModel(episodeDataUrl: episodeURL)
+            episodeModel.fetchEpisode(completion: completion)
+        }
+    }
+    
     public func fetchEpisodes() {
         for episode in characterModel.episodeList {
-            characterModel.fetchEpisode(episodeName: episode) { [weak self] result in
+            fetchEpisode(episodeName: episode) { [weak self] result in
                 switch result {
                 case .success(let data):
                     self?.rmEpisodeViewCellModel.append( RMEpisodeViewCellModel(episode: data))

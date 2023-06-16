@@ -24,7 +24,14 @@ class RMLocationListViewController: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "LocationTableViewCell", bundle: nil), forCellReuseIdentifier: LocationTableViewCell.cellIdentifier)
-        
+    }
+    private func displayDetailVC(rmLocation: RMLocation) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "RMLocationDetailVC", bundle:nil)
+        if let locationDetailVC = storyBoard.instantiateViewController(withIdentifier: "RMLocationDetailViewController") as? RMLocationDetailViewController {
+            let rmLocationModel = RMLocationDetailModel(location: rmLocation)
+            locationDetailVC.configure(rmLocationDetailViewModel: RMLocationDetailViewModel(locationModel: rmLocationModel))
+            navigationController?.pushViewController(locationDetailVC, animated: true)
+        }
     }
 }
 extension RMLocationListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -78,7 +85,6 @@ extension RMLocationListViewController: UIScrollViewDelegate {
 }
 extension RMLocationListViewController: LocationModelDelegate {
     func didSelectItem(rmLocation: RMLocation) {
-        // open location detail vc 
-        print(rmLocation)
+        displayDetailVC(rmLocation: rmLocation)
     }
 }

@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 class RMLocationDetailViewController : UIViewController {
-    
-    
+    private var rmLocationDetailViewModel: RMLocationDetailViewModel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+    }
+    func configure(rmLocationDetailViewModel: RMLocationDetailViewModel){
+        self.rmLocationDetailViewModel = rmLocationDetailViewModel
+        self.rmLocationDetailViewModel.fetchCharacters()
+    }
 }
