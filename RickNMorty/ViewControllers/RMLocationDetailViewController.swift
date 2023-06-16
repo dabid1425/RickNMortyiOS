@@ -11,7 +11,10 @@ class RMLocationDetailViewController : UIViewController {
     private var rmLocationDetailViewModel: RMLocationDetailViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        setUp()
+    }
+    func setUp(){
+       //use detail Stack view for the labels and then use CharacterStackView for the characters
     }
     func configure(rmLocationDetailViewModel: RMLocationDetailViewModel){
         self.rmLocationDetailViewModel = rmLocationDetailViewModel

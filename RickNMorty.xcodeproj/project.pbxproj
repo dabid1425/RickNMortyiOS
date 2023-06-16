@@ -52,6 +52,8 @@
 		335634EC2A3CCF7D00431CE4 /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335634EA2A3CCF7D00431CE4 /* LocationCollectionViewCell.swift */; };
 		335634ED2A3CCF7D00431CE4 /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335634EB2A3CCF7D00431CE4 /* LocationCollectionViewCell.xib */; };
 		335634EF2A3CE24000431CE4 /* RMCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335634EE2A3CE24000431CE4 /* RMCharacterViewModel.swift */; };
+		335634F22A3CE91300431CE4 /* CharacterStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335634F12A3CE91300431CE4 /* CharacterStackView.xib */; };
+		335634F42A3CE91C00431CE4 /* CharacterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335634F32A3CE91C00431CE4 /* CharacterStackView.swift */; };
 		336146052A1D2130002526E4 /* SearchButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336146042A1D2130002526E4 /* SearchButtonModel.swift */; };
 		336146072A1D2181002526E4 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336146062A1D2181002526E4 /* TextFieldModel.swift */; };
 		336146092A1D222E002526E4 /* CustomUILabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336146082A1D222E002526E4 /* CustomUILabelModel.swift */; };
@@ -168,6 +170,8 @@
 		335634EA2A3CCF7D00431CE4 /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		335634EB2A3CCF7D00431CE4 /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
 		335634EE2A3CE24000431CE4 /* RMCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterViewModel.swift; sourceTree = "<group>"; };
+		335634F12A3CE91300431CE4 /* CharacterStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterStackView.xib; sourceTree = "<group>"; };
+		335634F32A3CE91C00431CE4 /* CharacterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStackView.swift; sourceTree = "<group>"; };
 		336146042A1D2130002526E4 /* SearchButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonModel.swift; sourceTree = "<group>"; };
 		336146062A1D2181002526E4 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		336146082A1D222E002526E4 /* CustomUILabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUILabelModel.swift; sourceTree = "<group>"; };
@@ -372,6 +376,15 @@
 			path = LocationCollectionCell;
 			sourceTree = "<group>";
 		};
+		335634F02A3CE8AD00431CE4 /* CharacterStackView */ = {
+			isa = PBXGroup;
+			children = (
+				335634F12A3CE91300431CE4 /* CharacterStackView.xib */,
+				335634F32A3CE91C00431CE4 /* CharacterStackView.swift */,
+			);
+			path = CharacterStackView;
+			sourceTree = "<group>";
+		};
 		336F26F82A0BE1BF003EF2C7 = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +456,7 @@
 		339E094F2A0BF4B20049956E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				335634F02A3CE8AD00431CE4 /* CharacterStackView */,
 				334DEC1A2A12E3DC00F27758 /* CustomUILabel */,
 				334DEC0B2A12CB3A00F27758 /* TextFieldView */,
 				338F46872A11A6A00010E2F4 /* DetailedStackView */,
@@ -738,6 +752,7 @@
 				336F27112A0BE1C0003EF2C7 /* LaunchScreen.storyboard in Resources */,
 				3342E70E2A1162EA00B191D9 /* RMEpisodeVC.storyboard in Resources */,
 				3350E10B2A3B6B2C0002C3E3 /* RMEpisodeDetailVC.storyboard in Resources */,
+				335634F22A3CE91300431CE4 /* CharacterStackView.xib in Resources */,
 				334DEC1C2A12E3FB00F27758 /* CustomLabelView.xib in Resources */,
 				338F468B2A11A6CE0010E2F4 /* DetailedStackView.xib in Resources */,
 				336F270E2A0BE1C0003EF2C7 /* Assets.xcassets in Resources */,
@@ -879,6 +894,7 @@
 				339E09892A0C006E0049956E /* RMCharacterStatus.swift in Sources */,
 				339E095B2A0BF99F0049956E /* RMCharacterViewController.swift in Sources */,
 				332D83892A0EA6C50091D1CB /* GradientBorderShadowView.swift in Sources */,
+				335634F42A3CE91C00431CE4 /* CharacterStackView.swift in Sources */,
 				339E09662A0BFF320049956E /* CharacterTableViewCell.swift in Sources */,
 				33686B312A3379B50024F680 /* TextFieldViewModel.swift in Sources */,
 				33686B392A3389D90024F680 /* SearchButtonViewModel.swift in Sources */,
