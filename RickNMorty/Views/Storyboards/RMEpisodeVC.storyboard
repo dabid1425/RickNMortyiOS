@@ -20,23 +20,31 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bJf-Iz-2D7">
-                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cL-Bz-S2w" customClass="CustomActivityIndicator" customModule="RickNMorty" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="326" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6lH-hR-P4J"/>
+                                    <constraint firstAttribute="width" constant="200" id="qyz-i0-EOb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="load"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ObV-zK-632" secondAttribute="trailing" id="5MG-Yk-1eq"/>
-                            <constraint firstItem="bJf-Iz-2D7" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="bZ2-wB-xcS"/>
+                            <constraint firstItem="2cL-Bz-S2w" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ELO-pe-eJl"/>
+                            <constraint firstItem="2cL-Bz-S2w" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PSm-CD-hNh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ObV-zK-632" secondAttribute="bottom" id="c3z-FU-i3j"/>
                             <constraint firstItem="ObV-zK-632" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gAB-Vl-JOo"/>
-                            <constraint firstItem="bJf-Iz-2D7" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hkP-p0-Pde"/>
                             <constraint firstItem="ObV-zK-632" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pE8-9Z-iOz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="spinner" destination="bJf-Iz-2D7" id="KNC-pk-2R7"/>
+                        <outlet property="spinner" destination="2cL-Bz-S2w" id="ZbF-z4-0ne"/>
                         <outlet property="tableView" destination="ObV-zK-632" id="A57-My-gEl"/>
                     </connections>
                 </viewController>
@@ -46,6 +54,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="load" width="860" height="638"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

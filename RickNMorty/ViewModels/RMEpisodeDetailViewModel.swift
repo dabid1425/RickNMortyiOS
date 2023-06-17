@@ -7,5 +7,9 @@
 
 import Foundation
 class RMEpisodeDetailViewModel {
-    
+    private let episodeModel: RMEpisodeDetailModel
+    var rmEpisodeViewCellModel = [RMEpisodeViewCellModel]()
+    init(episodeModel: RMEpisodeDetailModel) {
+        self.episodeModel = episodeModel
+    }
 }

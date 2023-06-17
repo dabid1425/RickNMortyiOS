@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class RMEpisodeListViewController: UIViewController{
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var spinner: UIActivityIndicatorView!
+    @IBOutlet var spinner: CustomActivityIndicator!
     private var episodeListViewModel = RMEpisodesViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,14 @@ class RMEpisodeListViewController: UIViewController{
         spinner.stopAnimating()
         spinner.alpha = 0
         tableView.reloadData()
+    }
+    private func displayDetailVC(rmEpisode: RMEpisode) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "RMEpisodeDetailVC", bundle:nil)
+        if let episodeDetailVC = storyBoard.instantiateViewController(withIdentifier: "RMEpisodeDetailViewController") as? RMEpisodeDetailViewController {
+            let rmEpisodeDetailViewModel = RMEpisodeDetailViewModel(episodeModel: RMEpisodeDetailModel(episode: rmEpisode))
+            episodeDetailVC.configure(rmEpisodeDetailViewModel: rmEpisodeDetailViewModel)
+            navigationController?.pushViewController(episodeDetailVC, animated: true)
+        }
     }
 }
 extension RMEpisodeListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -87,7 +95,6 @@ extension RMEpisodeListViewController: UIScrollViewDelegate {
 }
 extension RMEpisodeListViewController : EpisodeModelDelegate {
     func didSelectItem(rmEpisode: RMEpisode) {
-        // open episode detail vc 
-        print(rmEpisode)
+        displayDetailVC(rmEpisode: rmEpisode)
     }
 }

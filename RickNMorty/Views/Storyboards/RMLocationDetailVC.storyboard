@@ -52,23 +52,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="674" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7hJ-rd-Jm0">
-                                                <rect key="frame" x="8" y="91.333333333333371" width="414" height="674"/>
+                                                <rect key="frame" x="8" y="91.333333333333371" width="414" height="673.99999999999989"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yA6-Bg-FIj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="337"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l43-vb-dgL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="337"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6D-WT-Do2">
-                                                                <rect key="frame" x="207" y="0.0" width="207" height="337"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            </view>
-                                                        </subviews>
-                                                    </stackView>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="337" translatesAutoresizingMaskIntoConstraints="NO" id="O3t-5T-MNE">
-                                                        <rect key="frame" x="0.0" y="337" width="414" height="337"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -109,6 +96,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ItL-zo-YIc" secondAttribute="trailing" id="xhG-JV-1lr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="charactersInLocationStackView" destination="7hJ-rd-Jm0" id="RV7-Rf-Nqo"/>
+                        <outlet property="locationLabelStackView" destination="8gc-89-lqP" id="2aY-DJ-bZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

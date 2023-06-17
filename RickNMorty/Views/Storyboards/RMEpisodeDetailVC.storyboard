@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -11,12 +11,55 @@
         <!--Episode Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="RMEpisodeDetailViewController" customModule="RickNMorty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RMEpisodeDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RMEpisodeDetailViewController" customModule="RickNMorty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWH-vH-fwy">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19N-ZK-k3Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="430"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5aB-nj-qgG">
+                                                <rect key="frame" x="20" y="10" width="353" height="200"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wiu-Ia-EeB">
+                                                <rect key="frame" x="20" y="220" width="353" height="200"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="5aB-nj-qgG" firstAttribute="top" secondItem="19N-ZK-k3Q" secondAttribute="top" constant="10" id="3rq-WL-8xF"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wiu-Ia-EeB" secondAttribute="bottom" constant="10" id="6P5-lT-a7w"/>
+                                            <constraint firstItem="5aB-nj-qgG" firstAttribute="leading" secondItem="19N-ZK-k3Q" secondAttribute="leading" constant="20" id="W5w-Bm-Nh3"/>
+                                            <constraint firstAttribute="trailing" secondItem="5aB-nj-qgG" secondAttribute="trailing" constant="20" id="e82-B5-0ep"/>
+                                            <constraint firstItem="Wiu-Ia-EeB" firstAttribute="leading" secondItem="19N-ZK-k3Q" secondAttribute="leading" constant="20" id="j8N-gm-Mrc"/>
+                                            <constraint firstItem="Wiu-Ia-EeB" firstAttribute="top" secondItem="5aB-nj-qgG" secondAttribute="bottom" constant="10" id="kES-5T-J1c"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wiu-Ia-EeB" secondAttribute="trailing" constant="20" id="oBN-lN-FJP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="19N-ZK-k3Q" firstAttribute="top" secondItem="WYL-fF-FuE" secondAttribute="top" id="4nY-OX-VL6"/>
+                                    <constraint firstItem="19N-ZK-k3Q" firstAttribute="trailing" secondItem="WYL-fF-FuE" secondAttribute="trailing" id="5lm-ew-qZX"/>
+                                    <constraint firstItem="19N-ZK-k3Q" firstAttribute="width" secondItem="T0f-cW-jRr" secondAttribute="width" id="Mls-fJ-97u"/>
+                                    <constraint firstItem="19N-ZK-k3Q" firstAttribute="bottom" secondItem="WYL-fF-FuE" secondAttribute="bottom" id="nCe-Aq-FLy"/>
+                                    <constraint firstItem="19N-ZK-k3Q" firstAttribute="leading" secondItem="WYL-fF-FuE" secondAttribute="leading" id="nfg-TO-E9b"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="WYL-fF-FuE"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="T0f-cW-jRr"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="EWH-vH-fwy" secondAttribute="bottom" id="N6s-V4-94C"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EWH-vH-fwy" secondAttribute="trailing" id="YoZ-ad-arJ"/>
+                            <constraint firstItem="EWH-vH-fwy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ne9-Fo-hiZ"/>
+                            <constraint firstItem="EWH-vH-fwy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zf7-hT-zt2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

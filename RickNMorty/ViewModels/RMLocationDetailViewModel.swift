@@ -1,7 +1,7 @@
 //
 //  RMLocationDetailViewModel.swift
 //  RickNMorty
-//
+// use detail Stack view for the labels and then use CharacterStackView for the characters
 //  Created by Dan Abid on 6/15/23.
 //
 
@@ -12,7 +12,15 @@ class RMLocationDetailViewModel {
     init(locationModel: RMLocationDetailModel) {
         self.locationModel = locationModel
     }
-    public func fetchCharacter(characterString: String, completion: @escaping (Result<RMCharacter, Error>) -> Void) {
+    
+    func createLocationStackView() -> [DetailedStackView] {
+        return [DetailedStackView()]
+    }
+    
+    func createCharactersStackView() -> [CharacterStackView] {
+        return [CharacterStackView()]
+    }
+    func fetchCharacter(characterString: String, completion: @escaping (Result<RMCharacter, Error>) -> Void) {
         if let characterURL = URL(string: characterString) {
             let characterViewModel = RMCharacterViewModel(characterDataURL: characterURL)
             characterViewModel.fetchCharacter(completion: completion)

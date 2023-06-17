@@ -34,6 +34,17 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-Pn-BhV" customClass="CustomActivityIndicator" customModule="RickNMorty" customModuleProvider="target">
+                                                <rect key="frame" x="110" y="60" width="100" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="7JW-XY-fga"/>
+                                                    <constraint firstAttribute="width" constant="100" id="xYP-Je-piz"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="load"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="280" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rTj-iK-dfN">
                                                 <rect key="frame" x="20" y="220" width="280" height="280"/>
                                                 <subviews>
@@ -60,17 +71,14 @@
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Yll-lp-pMA">
-                                                <rect key="frame" x="150" y="100" width="20" height="20"/>
-                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="rTj-iK-dfN" firstAttribute="bottom" secondItem="vwJ-cs-wCQ" secondAttribute="top" id="1rK-eO-GZ3"/>
-                                            <constraint firstItem="Yll-lp-pMA" firstAttribute="centerY" secondItem="Fkc-rR-Dc7" secondAttribute="centerY" id="4zZ-w7-eiz"/>
+                                            <constraint firstItem="Gnm-Pn-BhV" firstAttribute="centerY" secondItem="Fkc-rR-Dc7" secondAttribute="centerY" id="CtG-Li-uvb"/>
+                                            <constraint firstItem="Gnm-Pn-BhV" firstAttribute="centerX" secondItem="Fkc-rR-Dc7" secondAttribute="centerX" id="IXg-fw-z7W"/>
                                             <constraint firstItem="rTj-iK-dfN" firstAttribute="leading" secondItem="gsq-F0-Hqy" secondAttribute="leading" constant="20" id="LO1-Zh-nPE"/>
                                             <constraint firstItem="vwJ-cs-wCQ" firstAttribute="leading" secondItem="gsq-F0-Hqy" secondAttribute="leading" constant="20" id="PAq-fJ-Dhc"/>
-                                            <constraint firstItem="Yll-lp-pMA" firstAttribute="centerX" secondItem="Fkc-rR-Dc7" secondAttribute="centerX" id="Xus-uF-2Ec"/>
                                             <constraint firstItem="rTj-iK-dfN" firstAttribute="top" secondItem="Fkc-rR-Dc7" secondAttribute="bottom" constant="10" id="ZyW-Y0-DjU"/>
                                             <constraint firstAttribute="bottom" secondItem="vwJ-cs-wCQ" secondAttribute="bottom" id="mTQ-Sl-5bL"/>
                                             <constraint firstAttribute="trailing" secondItem="rTj-iK-dfN" secondAttribute="trailing" constant="20" id="tEl-V6-Vlo"/>
@@ -103,7 +111,7 @@
                     <connections>
                         <outlet property="characterImageView" destination="Fkc-rR-Dc7" id="tNN-PX-BuF"/>
                         <outlet property="collectionView" destination="vwJ-cs-wCQ" id="ca4-Ze-RCo"/>
-                        <outlet property="spinner" destination="Yll-lp-pMA" id="qpt-U9-4nq"/>
+                        <outlet property="spinner" destination="Gnm-Pn-BhV" id="oJS-XJ-mE3"/>
                         <outlet property="stackView" destination="rTj-iK-dfN" id="d7D-kA-lc4"/>
                     </connections>
                 </viewController>
@@ -113,6 +121,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="load" width="860" height="638"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

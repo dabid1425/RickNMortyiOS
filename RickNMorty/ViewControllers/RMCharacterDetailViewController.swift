@@ -11,7 +11,7 @@ class RMCharacterDetailViewController : UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var characterImageView: CurvedLabelImageView!
-    @IBOutlet var spinner: UIActivityIndicatorView!
+    @IBOutlet var spinner: CustomActivityIndicator!
     var rmCharacterDetailViewModel: RMCharacterDetailViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,14 @@ class RMCharacterDetailViewController : UIViewController {
         self.rmCharacterDetailViewModel = rmCharacterDetailViewModel
         self.rmCharacterDetailViewModel.fetchEpisodes()
     }
+    private func displayDetailVC(rmEpisode: RMEpisode) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "RMEpisodeDetailVC", bundle:nil)
+        if let episodeDetailVC = storyBoard.instantiateViewController(withIdentifier: "RMEpisodeDetailViewController") as? RMEpisodeDetailViewController {
+            let rmEpisodeDetailViewModel = RMEpisodeDetailViewModel(episodeModel: RMEpisodeDetailModel(episode: rmEpisode))
+            episodeDetailVC.configure(rmEpisodeDetailViewModel: rmEpisodeDetailViewModel)
+            navigationController?.pushViewController(episodeDetailVC, animated: true)
+        }
+    }
 }
 extension RMCharacterDetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,7 +82,6 @@ extension RMCharacterDetailViewController : UICollectionViewDelegate, UICollecti
 }
 extension RMCharacterDetailViewController : EpisodeModelDelegate {
     func didSelectItem(rmEpisode: RMEpisode) {
-        // open episode detail vc 
-        print(rmEpisode)
+        displayDetailVC(rmEpisode: rmEpisode)
     }
 }

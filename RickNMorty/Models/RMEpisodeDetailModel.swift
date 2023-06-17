@@ -7,5 +7,11 @@
 
 import Foundation
 class RMEpisodeDetailModel {
-    
+    private let episode: RMEpisode
+    init(episode: RMEpisode) {
+        self.episode = episode
+    }
+    func getEpisode() -> RMEpisode {
+        return episode
+    }
 }
