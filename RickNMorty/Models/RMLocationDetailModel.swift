@@ -21,7 +21,7 @@ class RMLocationDetailModel {
         return location.type
     }
     public var dimension: String {
-        return location.type
+        return location.dimension
     }
     public var residents: [String] {
         return location.residents

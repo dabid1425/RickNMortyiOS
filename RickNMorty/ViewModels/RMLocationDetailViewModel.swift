@@ -14,7 +14,31 @@ class RMLocationDetailViewModel {
     }
     
     func createLocationStackView() -> [DetailedStackView] {
-        return [DetailedStackView()]
+        var itemsInView = [DetailedStackView]()
+        var anotherCustomView =  DetailedStackView()
+        var detailModel = DetailStackModel()
+        detailModel.leftSide = "Location"
+        detailModel.rightSide = locationModel.name
+        var detailViewModel = DetailStackViewModel(detailStackModel: detailModel)
+        anotherCustomView.viewModel = detailViewModel
+        itemsInView.append(anotherCustomView)
+        
+        anotherCustomView =  DetailedStackView()
+        detailModel = DetailStackModel()
+        detailModel.rightSide = locationModel.dimension
+        detailModel.leftSide = "Dimension"
+        detailViewModel = DetailStackViewModel(detailStackModel: detailModel)
+        anotherCustomView.viewModel = detailViewModel
+        itemsInView.append(anotherCustomView)
+        
+        anotherCustomView =  DetailedStackView()
+        detailModel = DetailStackModel()
+        detailModel.rightSide = locationModel.type
+        detailModel.leftSide = "Type"
+        detailViewModel = DetailStackViewModel(detailStackModel: detailModel)
+        anotherCustomView.viewModel = detailViewModel
+        itemsInView.append(anotherCustomView)
+        return itemsInView
     }
     
     func createCharactersStackView() -> [CharacterStackView] {
